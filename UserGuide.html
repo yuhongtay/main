@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 3 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>guiltTrip() - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>AddressBook Level 3 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>guiltTrip() - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team T16-04</code>      Since: <code>Aug 2019</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -13,16 +13,11 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.9. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#expenses-and-income">3.1. Expenses and Income</a></li>
+<li><a href="#statistics">3.2. Statistics</a></li>
+<li><a href="#organization">3.3. Organization</a></li>
+<li><a href="#reminders">3.4. Reminders</a></li>
+<li><a href="#wishlist">3.5. WishList</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -34,7 +29,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 3 (AB3) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB3 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>Craving for a nice bowl of Mala but can’t seem to save up enough for it? guiltTrip() is the perfect platform for those <strong>aspiring to be able to afford their Mala</strong>, finally! More importantly, guiltTrip() is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, guiltTrip() can get your finance tracker tasks done faster than traditional GUI apps.</p>
 </div>
 </div>
 </div>
@@ -47,10 +42,10 @@
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
+<p>Download the latest <code>guiltTrip().jar</code> <a href="https://github.com/se-edu/addressbook-level3/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your guiltTrip.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
@@ -69,13 +64,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>listExpenditure</code></strong> : lists all expenditure</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>addAutoExpenditure</code></strong>` --freq month --desc drinks --amt 11.99 to the guiltTrip.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>deleteExpenditure</code></strong><code>3</code> : deletes the 3rd contact shown in the expenditure list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -101,44 +96,24 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>&lt;&gt;</code> are the parameters to be supplied by the user e.g. in <code>addExpense [--desc &lt;description&gt;]</code>, <code>&lt;description&gt;</code> is a parameter which can be used as <code>addExpense --desc deck mala</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
 </li>
-<li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
-</li>
-<li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
-</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="expenses-and-income"><a class="link" href="#expenses-and-income">3.1. Expenses and Income</a></h3>
+<div class="sect3">
+<h4 id="adding-a-expense-code-addexpense-code"><a class="link" href="#adding-a-expense-code-addexpense-code">3.1.1. Adding a expense: <code>addExpense</code></a></h4>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p>Adds a new expenditure to your total/daily/weekly/monthly spending with current timestamp. Inputs can be arranged in a different order. Description and tag may be omitted from the expenditure record.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A person can have any number of tags (including 0)
-</td>
-</tr>
-</table>
+<p>Format: <code>addExpense [--desc &lt;description&gt;] [--tag &lt;tag&gt;] --amt &lt;expenditure&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -146,49 +121,27 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>addExpense --desc deck mala --tag food --amt 5.60</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p><code>addExpense --tag food --amt 5.60</code></p>
+</li>
+<li>
+<p><code>addExpense --amt 5.60 --cat food</code></p>
+</li>
+<li>
+<p><code>addExpense --amt 5.60</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">3.3. Listing all persons : <code>list</code></a></h3>
+<div class="sect3">
+<h4 id="editing-a-expense-code-editexpense-code"><a class="link" href="#editing-a-expense-code-editexpense-code">3.1.2. Editing a expense: <code>editExpense</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+<p>Edits a current expenditure with the given index number</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.4. Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Format: <code>editExpense &lt;index&gt; [--desc &lt;description&gt;] [--tag &lt;tag&gt;] [--amt &lt;expenditure&gt;]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -196,44 +149,21 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+<p><code>editExpense 1 --desc deck mala with friends</code></p>
 </li>
 <li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
+<p><code>editExpense 1 --tag mala --amt 5.33</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">3.5. Locating persons by name: <code>find</code></a></h3>
+<div class="sect3">
+<h4 id="deleting-a-expense-code-deleteexpense-code"><a class="link" href="#deleting-a-expense-code-deleteexpense-code">3.1.3. Deleting a expense: <code>deleteExpense</code></a></h4>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Deletes the recorded expenditure with the given index number.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
-</li>
-</ul>
-</div>
-</div>
+<div class="paragraph">
+<p>Format: <code>deleteExpense &lt;index&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -241,38 +171,18 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
-</li>
-<li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><code>deleteExpense 2</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">3.6. Deleting a person : <code>delete</code></a></h3>
+<div class="sect3">
+<h4 id="adding-autoexpenditure-code-addautoexpenditure-code"><a class="link" href="#adding-autoexpenditure-code-addautoexpenditure-code">3.1.4. Adding AutoExpenditure : <code>addAutoExpenditure</code></a></h4>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
+<p>Adds an automatically recurring expenditure every day/week/month (frequency) with the given description and amount.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed person list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="paragraph">
+<p>Format: `addAutoExpenditure --freq &lt;frequency&gt; --desc &lt;description&gt; --amt &lt;expenditure&gt; `</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -280,43 +190,851 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
+<p><code>addAutoExpenditure --freq month --desc spotify --amt 11.99</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.7. Clearing all entries : <code>clear</code></a></h3>
+<div class="sect3">
+<h4 id="listing-autoexpenditure-code-listautoexpenditure-code"><a class="link" href="#listing-autoexpenditure-code-listautoexpenditure-code">3.1.5. Listing AutoExpenditure : <code>listAutoExpenditure</code></a></h4>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>Lists all the current automatically recurring expenditures.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editAutoExpenditure &lt;index&gt; [--freq &lt;frequency&gt;] [--desc &lt;description&gt;] [--amt &lt;expenditure&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listAutoExpenditure</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-autoexpenditure-code-deleteautoexpenditure-code"><a class="link" href="#deleting-autoexpenditure-code-deleteautoexpenditure-code">3.1.6. Deleting AutoExpenditure : <code>deleteAutoExpenditure</code></a></h4>
+<div class="paragraph">
+<p>Deletes a current automatically recurring expenditure at the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteAutoExpenditure &lt;index&gt;</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-income-code-addincome-code"><a class="link" href="#adding-income-code-addincome-code">3.1.7. Adding Income : <code>addIncome</code></a></h4>
+<div class="paragraph">
+<p>Adds the amount to your total income. Inputs can be arranged in a different order. Description may be omitted from the income record.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addIncome [--desc &lt;description&gt;] --amt &lt;income amount&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addIncome --amt 6000</code></p>
+</li>
+<li>
+<p><code>addIncome --amt 1000 --desc year-end bonus!! :DD</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-income-code-editincome-code"><a class="link" href="#editing-income-code-editincome-code">3.1.8. Editing Income : <code>editIncome</code></a></h4>
+<div class="paragraph">
+<p>Edits a current income record at the given index number.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editIncome &lt;index&gt; [--desc &lt;description&gt; --amt &lt;income amount&gt;] [--tag &lt;tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editIncome 1 --desc salary for feb</code></p>
+</li>
+<li>
+<p><code>editIncome 1 --desc february --amt 6500 --tag salary</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-income-code-deleteincome-code"><a class="link" href="#deleting-income-code-deleteincome-code">3.1.9. Deleting Income : <code>deleteIncome</code></a></h4>
+<div class="paragraph">
+<p>Deletes the recorded income at the given index number.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteIncome &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteIncome 3</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-budget-addbudget"><a class="link" href="#adding-budget-addbudget">3.1.10. Adding Budget : 'addBudget`</a></h4>
+<div class="paragraph">
+<p>Adds a new budget for expenditure with a certain tag, if applicable. Period: day/week/month</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addBudget --desc &lt;description&gt; --amt &lt;budget&gt; --period &lt;period&gt; [--tag &lt;tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addBudget --desc food budget --period day --amt 200 --tag food</code></p>
+</li>
+<li>
+<p><code>addBudget --desc entertainment budget --amt 300</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-budget-listbudget"><a class="link" href="#listing-budget-listbudget">3.1.11. Listing Budget : 'listBudget`</a></h4>
+<div class="paragraph">
+<p>Lists all the current budgets the user has.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listBudget</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listBudget</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-budget-editbudget"><a class="link" href="#editing-budget-editbudget">3.1.12. Editing Budget : 'editBudget`</a></h4>
+<div class="paragraph">
+<p>Edits a current budget&#8217;s description, amount or tag (if applicable) at the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editBudget --index &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;budget&gt;] [--tag &lt;tag&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editBudget 1 --desc fooooood budget</code></p>
+</li>
+<li>
+<p><code>editBudget 2 --desc lunch budget --amt 150</code></p>
+</li>
+<li>
+<p><code>editBudget 2 --tag fun</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-budget-code-deletebudget-code"><a class="link" href="#deleting-budget-code-deletebudget-code">3.1.13. Deleting Budget : <code>deleteBudget</code></a></h4>
+<div class="paragraph">
+<p>Deletes a current budget at the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteBudget &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteBudget 2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-loan-code-addloan-code"><a class="link" href="#adding-a-loan-code-addloan-code">3.1.14. Adding a Loan : <code>addLoan</code></a></h4>
+<div class="paragraph">
+<p>Adds a new loan with the given description, amount and interest (in percentage) and calculates the total outstanding amount based on the interest.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addLoan --desc &lt;description&gt; --amt &lt;loan amount&gt; --int &lt;interest&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addLoan --desc student loan --amt 30000 --int 4.5</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-a-loan-code-listloan-code"><a class="link" href="#listing-a-loan-code-listloan-code">3.1.15. Listing a loan : <code>listLoan</code></a></h4>
+<div class="paragraph">
+<p>Lists all the loans that the user has.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listLoan</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>listLoan</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-loan-code-editloan-code"><a class="link" href="#editing-a-loan-code-editloan-code">3.1.16. Editing a loan : <code>editLoan</code></a></h4>
+<div class="paragraph">
+<p>Edits a current loan&#8217;s description, loan amount, or both.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>editLoan &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;loan amount&gt;] [--int &lt;interest&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editLoan 1 --desc nus tuition loan T.T</code></p>
+</li>
+<li>
+<p><code>editLoan 1 --amt 25000 --int 4.45%</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-loan-code-deleteloan-code"><a class="link" href="#deleting-a-loan-code-deleteloan-code">3.1.17. Deleting a loan : <code>deleteLoan</code></a></h4>
+<div class="paragraph">
+<p>Deletes a current loan at the given index.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteLoan &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteLoan 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="paying-a-loan-code-payloan-code"><a class="link" href="#paying-a-loan-code-payloan-code">3.1.18. Paying a loan : <code>payLoan</code></a></h4>
+<div class="paragraph">
+<p>Reduces the loan amount for the loan at the given index after user pays for part of the loan.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>payLoan &lt;index&gt; &lt;amountPaid&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>payLoan 1 4000</code></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.8. Exiting the program : <code>exit</code></a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">3.2. Statistics</a></h3>
+<div class="sect3">
+<h4 id="viewing-history-code-viewhistory-code"><a class="link" href="#viewing-history-code-viewhistory-code">3.2.1. Viewing History : <code>viewHistory</code></a></h4>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>View past expenditure/ income from startDate to endDate (if present). If startDate not present, lists from 1 month before endDate. If endDate not present, list to current time.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewHistory&#8201;&#8212;&#8201;cat &lt;category&gt; [--period &lt;startDate&gt;, &lt;endDate&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewHistory&#8201;&#8212;&#8201;cat expenditure</code></p>
+</li>
+<li>
+<p><code>viewHistory&#8201;&#8212;&#8201;cat expenditure --period 11/9/2019, 21/9/2019</code></p>
+</li>
+<li>
+<p><code>viewHistory&#8201;&#8212;&#8201;cat income --period 11/9/2019</code></p>
+</li>
+<li>
+<p><code>viewHistory&#8201;&#8212;&#8201;cat expenditure --period ,2 21/9/2019</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-time-code-sorttime-code"><a class="link" href="#sorting-time-code-sorttime-code">3.2.2. Sorting Time : <code>sortTime</code></a></h4>
+<div class="paragraph">
+<p>List of expenditure/ income currently displayed by viewHistory will be sorted according to time in increasing/ decreasing order.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sortTime order &lt;ascending || descending&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sortTime ascending</code></p>
+</li>
+<li>
+<p><code>sortTime descending</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sorting-amount-code-sortamt-code"><a class="link" href="#sorting-amount-code-sortamt-code">3.2.3. Sorting Amount : <code>sortAmt</code></a></h4>
+<div class="paragraph">
+<p>List of expenditure/ income currently displayed by viewHistory will be sorted according to amount in increasing/ decreasing order.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sortAmt order &lt;ascending || descending&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sortAmt ascending</code></p>
+</li>
+<li>
+<p><code>sortAmt descending</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="search-code-search-code"><a class="link" href="#search-code-search-code">3.2.4. Search : <code>search</code></a></h4>
+<div class="paragraph">
+<p>Search income/expenditure list/ wishlist for keyword/ tag.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>Search [--cat &lt;category&gt;] --key &lt;keyword&gt; || --amt &lt;(== || &lt; || &gt; || &#8656; || &gt;=) amount&gt; || --tag &lt;tag&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>search --cat expenditure --key book: lists each entry in expenditure with title containing keyword “book”.</code></p>
+</li>
+<li>
+<p><code>search --cat wishlist --key monitor: lists each entry in expenditure with title containing keyword “monitor”</code></p>
+</li>
+<li>
+<p><code>search --key book: search everything in database with keyword “book”.</code></p>
+</li>
+<li>
+<p><code>search --cat expenditure --tag _CLOTHING: lists each entry in expenditure with tag _CLOTHING.</code></p>
+</li>
+<li>
+<p><code>search --cat wishlist  --tag _BOOK: lists each entry in wishlist with tag _BOOK.</code></p>
+</li>
+<li>
+<p><code>search --cat expenditure --amt &gt;100: list each entry in expenditure over $100.</code></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
+<h3 id="organization"><a class="link" href="#organization">3.3. Organization</a></h3>
+<div class="sect3">
+<h4 id="creating-tags-createtag"><a class="link" href="#creating-tags-createtag">3.3.1. Creating Tags : 'createTag'</a></h4>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
+<p>Creates a Tag.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>createTag &lt;category name&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>createTag income salary</code></p>
+</li>
+<li>
+<p><code>createTag expense food</code></p>
+</li>
+<li>
+<p><code>createTag wishList Nov</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-tags-listtags"><a class="link" href="#listing-tags-listtags">3.3.2. Listing Tags : 'listTags'</a></h4>
+<div class="paragraph">
+<p>List the list of Tags.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listTags &lt;keywords&gt; --regex &lt;regex&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listTags important</code></p>
+</li>
+<li>
+<p><code>listTags --regex .*important</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="renaming-tags-renametag"><a class="link" href="#renaming-tags-renametag">3.3.3. Renaming Tags : 'renameTag'</a></h4>
+<div class="paragraph">
+<p>Rename the description of one tag.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>renameTag &lt;oldname&gt; &lt;newname&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>renameTag food moreFood</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-tags-deletetag"><a class="link" href="#deleting-tags-deletetag">3.3.4. Deleting Tags : 'deleteTag'</a></h4>
+<div class="paragraph">
+<p>Deletes the tag from the pool of tag. Tagged objects can be removed with -h flag.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteTag &lt;name&gt; &#8592;h || --hard&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteTag food</code></p>
+</li>
+<li>
+<p><code>deleteTag food -h</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resetting-record-reset"><a class="link" href="#resetting-record-reset">3.3.5. Resetting Record : 'reset'</a></h4>
+<div class="paragraph">
+<p>Resets records of expenditure/budget/income/loan.</p>
+</div>
+<div class="paragraph">
+<p>Format: `reset --before &lt;DD/MM/YYYY&gt; --after &lt;DD/MM/YYYY&gt; `</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>reset --after 27/1/1000 --before 28/1/1000</code> :nothing deleted</p>
+</li>
+<li>
+<p><code>reset --before 2/1/2019 # 1/1/2019 and earlier</code></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.10. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="reminders"><a class="link" href="#reminders">3.4. Reminders</a></h3>
+<div class="sect3">
+<h4 id="list-reminders-for-expenditure-code-listexpenditurereminders-code"><a class="link" href="#list-reminders-for-expenditure-code-listexpenditurereminders-code">3.4.1. List Reminders for Expenditure : <code>listExpenditureReminders</code></a></h4>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Lists all the expenditure reminders that the user has set.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listExpenditureReminders</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listExpenditureReminders</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-reminders-for-wishlist-code-listwishlistreminders-code"><a class="link" href="#list-reminders-for-wishlist-code-listwishlistreminders-code">3.4.2. List Reminders for WishList : <code>listWishlistReminders</code></a></h4>
+<div class="paragraph">
+<p>Lists all the wishlist reminders that the user has set.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listWishlistReminders</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listWishlistReminders</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="set-reminder-date-for-expenditure-code-setexpenditurereminderdate-code"><a class="link" href="#set-reminder-date-for-expenditure-code-setexpenditurereminderdate-code">3.4.3. Set Reminder Date for Expenditure : <code>setExpenditureReminderDate</code></a></h4>
+<div class="paragraph">
+<p>Set reminder to alert on certain date if app is running.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>setExpenditureReminderDate --index&lt;index&gt; --DateTime&lt;DateTime&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>setReminders --index 2 --27/9/2019 1500</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-reminder-for-expenditure-code-addexpenditurereminder-code"><a class="link" href="#add-reminder-for-expenditure-code-addexpenditurereminder-code">3.4.4. Add Reminder for Expenditure : <code>addExpenditureReminder</code></a></h4>
+<div class="paragraph">
+<p>Set the current reminder limit to expenditureLimit, which will remind the user whenever he/she exceeds the amount. The limit refreshes according to &lt;time&gt;. Type will work on Categories/Tags To inform the user whenever he/she exceeds the limit for that tag.
+Format: <code>addExpenditureReminder --limit &lt;expenditureLimit&gt; --time &lt;time&gt; --type &lt;type&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addExpenditureReminder --limit 1900 --time weekly --type Food</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-reminder-for-expenditure-code-deleteexpenditurereminder-code"><a class="link" href="#delete-reminder-for-expenditure-code-deleteexpenditurereminder-code">3.4.5. Delete Reminder for Expenditure : <code>deleteExpenditureReminder</code></a></h4>
+<div class="paragraph">
+<p>Deletes the Expenditure reminder that was at index in the list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteExpenditureReminder --index &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteWishListReminder --index 3</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-reminder-for-wishlist-code-addwishlistreminder-code"><a class="link" href="#add-reminder-for-wishlist-code-addwishlistreminder-code">3.4.6. Add Reminder for WishList : <code>addWishlistReminder</code></a></h4>
+<div class="paragraph">
+<p>Set a reminder to inform user when they have saved the specified percentage towards their wishlist item that is located at the index in the wishlist. If percentage is not specified, the reminder is set with 80% as its default.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addWishlistReminder --index &lt;index&gt; --percent [percentage]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addWishlistReminder --index 2 --percent 100</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-reminder-for-wishlist-code-deletewishlistreminder-code"><a class="link" href="#delete-reminder-for-wishlist-code-deletewishlistreminder-code">3.4.7. Delete Reminder for WishList : <code>deleteWishlistReminder</code></a></h4>
+<div class="paragraph">
+<p>Deletes the WishList reminder that was at index in the list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteWishListReminder --index &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteWishListReminder --index 3</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-reminder-code-editreminder-code"><a class="link" href="#edit-reminder-code-editreminder-code">3.4.8. Edit Reminder : <code>editReminder</code></a></h4>
+<div class="paragraph">
+<p>Edits the reminder that was at index &lt;index&gt; in the list. List will have two types of reminders, expenditure reminder and wishlist reminder.</p>
+</div>
+<div class="paragraph">
+<p>Format : <code>editReminder --type &lt;type&gt; --index &lt;index&gt; [--limit &lt;expenditureLimit&gt;] || [--time &lt;time&gt;]</code></p>
+</div>
+<div class="paragraph">
+<p>Example :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editReminder --type WishList --index 3 --percent 100</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="wishlist"><a class="link" href="#wishlist">3.5. WishList</a></h3>
+<div class="sect3">
+<h4 id="add-wishlist-code-addwishlist-code"><a class="link" href="#add-wishlist-code-addwishlist-code">3.5.1. Add WishList : <code>addWishlist</code></a></h4>
+<div class="paragraph">
+<p>Adds a new item to your current wishlist</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addWishlist --name &lt;name&gt; --cat &lt;category&gt; --amt &lt;price&gt; --deadline &lt;date&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addWishlist --name deck mala --cat food --amt 5.60</code></p>
+</li>
+<li>
+<p><code>addWishlist --name deck mala --cat food --amt 5.60 --deadline 01/01/2020</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-wishlist-code-deletewishlist-code"><a class="link" href="#delete-wishlist-code-deletewishlist-code">3.5.2. Delete WishList : <code>deleteWishlist</code></a></h4>
+<div class="paragraph">
+<p>Deletes the item at the stated index from your current wishlist</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteWishlist &lt;Index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteWishlist 3</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-notes-to-wishlist-code-notewishlist-code"><a class="link" href="#add-notes-to-wishlist-code-notewishlist-code">3.5.3. Add Notes to WishList : <code>noteWishlist</code></a></h4>
+<div class="paragraph">
+<p>Add notes to the item at the stated index in your current wishlist</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>noteWishlist &lt;index&gt; &lt;note&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:
+* <code>noteWishlist 1 try the chinatown ri ri hong mala!</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-tags-to-wishlist-code-tagwishlist-code"><a class="link" href="#add-tags-to-wishlist-code-tagwishlist-code">3.5.4. Add Tags to WishList : <code>tagWishlist</code></a></h4>
+<div class="paragraph">
+<p>Tags the item at the stated index in your current wishlist with High/ Medium/ Low priority</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>tag &lt;index&gt; &lt;high/ medium/ low&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:
+* <code>tagWishlist 1 high</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-wishlist-code-viewwishlist-code"><a class="link" href="#view-wishlist-code-viewwishlist-code">3.5.5. View WishList: <code>viewWishlist</code></a></h4>
+<div class="paragraph">
+<p>Displays your current wishlist</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>viewWishlist</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>viewWishList</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sort-wishlist-by-time-code-sortwishlisttime-code"><a class="link" href="#sort-wishlist-by-time-code-sortwishlisttime-code">3.5.6. Sort WishList by Time : <code>sortWishlistTime</code></a></h4>
+<div class="paragraph">
+<p>Sort by date added from earliest to latest/ from latest to earliest</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sortWishlistTime &lt;ascending/ descending&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sortWishlistTime ascending</code></p>
+</li>
+<li>
+<p><code>sortWishlistTime descending</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sort-wishlist-by-price-code-sortwishlistprice-code"><a class="link" href="#sort-wishlist-by-price-code-sortwishlistprice-code">3.5.7. Sort WishList by Price : <code>sortWishlistPrice</code></a></h4>
+<div class="paragraph">
+<p>Sort by price from lowest to highest/ from highest to lowest</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sortWishlistPrice &lt;ascending/ descending&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sortWishlistPrice ascending</code></p>
+</li>
+<li>
+<p><code>sortWishlistPrice descending</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sort-wishlist-by-name-code-sortwishlistname-code"><a class="link" href="#sort-wishlist-by-name-code-sortwishlistname-code">3.5.8. Sort WishList by Name : <code>sortWishlistName</code></a></h4>
+<div class="paragraph">
+<p>Sort by name in alphabetical order/ reverse alphabetical order</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>sortWishlistName &lt;ascending/ descending&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sortWishlistName ascending</code></p>
+</li>
+<li>
+<p><code>sortWishlistName descending</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sort-wishlist-by-priority-code-sortwishlistpriority-code"><a class="link" href="#sort-wishlist-by-priority-code-sortwishlistpriority-code">3.5.9. Sort WishList by Priority : <code>sortWishlistPriority</code></a></h4>
+<div class="paragraph">
+<p>Sort by priority status from lowest to highest priority/ from highest to lowest priority
+Format: <code>sortWishlistPriority &lt;ascending/descending&gt;</code>
+Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sortWishlistPriority ascending</code></p>
+</li>
+<li>
+<p><code>sortWishlistPriority descending</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="search-wishlist-code-searchwishlist-code"><a class="link" href="#search-wishlist-code-searchwishlist-code">3.5.10. Search WishList : <code>searchWishList</code></a></h4>
+<div class="paragraph">
+<p>Search wishlist for items containing keyword in their name/ notes<br>
+Format: <code>searchWishList &lt;keyword&gt;</code>
+Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>searchWishList mala</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="purchase-wishlist-code-purchase-code"><a class="link" href="#purchase-wishlist-code-purchase-code">3.5.11. Purchase WishList : <code>purchase</code></a></h4>
+<div class="paragraph">
+<p>Purchases the item at the stated index from your current wishlist
+Format: <code>purchase &lt;index&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:
+* <code>purchase 1</code></p>
+</div>
 </div>
 </div>
 </div>
@@ -324,6 +1042,11 @@ There is no need to save manually.</p>
 <div class="sect1">
 <h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: When will the record of my expenditure be until?
+<strong>A</strong>: It can be as long as you want it to be until! If you want to delete a certain month’s expenditure, you can just call a command to
+do so.</p>
+</div>
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
@@ -333,34 +1056,182 @@ There is no need to save manually.</p>
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p>Expenses and Income:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>addExpense [--desc &lt;description&gt;] [--tag &lt;tag&gt;] --amt &lt;expenditure&gt;</p>
 </li>
 <li>
-<p><strong>Clear</strong> : <code>clear</code></p>
+<p>editExpense &lt;index&gt; [--desc &lt;description&gt;] [--tag &lt;tag] [--amt &lt;expenditure&gt;]</p>
 </li>
 <li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
+<p>deleteExpense &lt;index&gt;</p>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+<p>addAutoExpenditure --freq &lt;frequency&gt; --desc &lt;description&gt; --amt &lt;expenditure&gt;</p>
 </li>
 <li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
+<p>listAutoExpenditure</p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p>editAutoExpenditure &lt;index&gt; [--freq &lt;frequency&gt;] [--desc &lt;description&gt;] [--amt &lt;expenditure&gt;]</p>
 </li>
 <li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p>deleteAutoExpenditure &lt;index&gt;</p>
 </li>
-</ul>
+<li>
+<p>addIncome [--desc &lt;description&gt;] --amt &lt;income amount&gt;</p>
+</li>
+<li>
+<p>editIncome &lt;index&gt; [--desc &lt;description&gt; --amt &lt;income amount&gt;] [--tag &lt;tag&gt;]</p>
+</li>
+<li>
+<p>deleteIncome &lt;index&gt;</p>
+</li>
+<li>
+<p>addBudget --desc &lt;description&gt; --amt &lt;budget&gt; --period &lt;period&gt; [--tag &lt;tag&gt;]</p>
+</li>
+<li>
+<p>listBudget</p>
+</li>
+<li>
+<p>editBudget --index &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;budget&gt;] [--tag &lt;tag&gt;]</p>
+</li>
+<li>
+<p>deleteBudget &lt;index&gt;</p>
+</li>
+<li>
+<p>addLoan --desc &lt;description&gt; --amt &lt;loan amount&gt; --int &lt;interest&gt;</p>
+</li>
+<li>
+<p>listLoan</p>
+</li>
+<li>
+<p>editLoan &lt;index&gt; [--desc &lt;description&gt;] [--amt &lt;loan amount&gt;] [--int &lt;interest&gt;]</p>
+</li>
+<li>
+<p>deleteLoan &lt;index&gt;</p>
+</li>
+<li>
+<p>payLoan &lt;index&gt; &lt;amountPaid&gt;</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Statistics:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>viewHistory&#8201;&#8212;&#8201;cat &lt;category&gt; [--period &lt;startDate&gt;, &lt;endDate&gt;]</p>
+</li>
+<li>
+<p>sortTime order &lt;ascending || descending&gt;</p>
+</li>
+<li>
+<p>sortAmt order &lt;ascending || descending&gt;</p>
+</li>
+<li>
+<p>Search [--cat &lt;category&gt;] --key &lt;keyword&gt; || --amt &lt;(== || &lt; || &gt; || &#8656; || &gt;=) amount&gt; || --tag</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Organisation:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>createTag &lt;category name&gt;</p>
+</li>
+<li>
+<p>listTags &lt;keywords&gt; --regex &lt;regex&gt;</p>
+</li>
+<li>
+<p>renameTag &lt;oldname&gt; &lt;newname&gt;</p>
+</li>
+<li>
+<p>deleteTag &lt;name&gt; &#8592;h || --hard&gt;</p>
+</li>
+<li>
+<p>reset --before &lt;DD/MM/YYYY&gt; --after &lt;DD/MM/YYYY&gt;</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Reminders:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>listExpenditureReminders</p>
+</li>
+<li>
+<p>listWishlistReminders</p>
+</li>
+<li>
+<p>setExpenditureReminderDate --index&lt;index&gt; --DateTime&lt;DateTime&gt;</p>
+</li>
+<li>
+<p>addExpenditureReminder --limit &lt;expenditureLimit&gt; --time &lt;time&gt; --type &lt;type&gt;</p>
+</li>
+<li>
+<p>addWishlistReminder --index &lt;index&gt; --percent [percentage]</p>
+</li>
+<li>
+<p>deleteReminder &lt;index&gt;</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Wishlist</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>addWishlist --name &lt;name&gt; --cat &lt;category&gt; --amt &lt;price&gt; --deadline &lt;date&gt;</p>
+</li>
+<li>
+<p>deleteWishlist &lt;Index&gt;</p>
+</li>
+<li>
+<p>noteWishlist &lt;index&gt; &lt;note&gt;</p>
+</li>
+<li>
+<p>tag &lt;index&gt; &lt;high/ medium/ low&gt;</p>
+</li>
+<li>
+<p>viewWishlist</p>
+</li>
+<li>
+<p>sortWishlistTime &lt;ascending/ descending&gt;</p>
+</li>
+<li>
+<p>sortWishlistPrice &lt;ascending/ descending&gt;</p>
+</li>
+<li>
+<p>sortWishlistName &lt;ascending/ descending&gt;</p>
+</li>
+<li>
+<p>sortWishlistPriority &lt;ascending/descending&gt;</p>
+</li>
+<li>
+<p>search &lt;keyword&gt;</p>
+</li>
+<li>
+<p>purchase &lt;index&gt;</p>
+</li>
+<li>
+<p>importWishlist &lt;file path&gt;</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-08 11:38:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-08 03:40:04 UTC</div></div></div></body></html>
