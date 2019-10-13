@@ -9,6 +9,8 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Entry;
 import seedu.address.model.person.Expense;
+import seedu.address.model.person.Income;
+import seedu.address.model.person.Wish;
 
 /**
  * Adds a person to the address book.
@@ -46,6 +48,10 @@ public class AddCommand extends Command {
 
         if (toAdd.getType().equalsIgnoreCase("Expense")) {
             model.addExpense((Expense) toAdd);
+        } else if (toAdd.getType().equalsIgnoreCase("Wish")) {
+            model.addWish((Wish) toAdd);
+        } else if (toAdd.getType().equalsIgnoreCase("Income")) {
+            model.addIncome((Income) toAdd);
         } else {
             model.addEntry(toAdd);
         }

@@ -11,6 +11,8 @@ import seedu.address.model.person.ExpenseList;
 import seedu.address.model.person.Income;
 import seedu.address.model.person.IncomeList;
 import seedu.address.model.person.UniqueEntryList;
+import seedu.address.model.person.Wish;
+import seedu.address.model.person.WishList;
 
 /**
  * Wraps all data at the address-book level
@@ -21,6 +23,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     private final UniqueEntryList entries;
     private final ExpenseList expenses;
     private final IncomeList incomes;
+    private final WishList wishes;
 
     /*
      * The 'unusual' code block below is a non-static initialization block, sometimes used to avoid duplication
@@ -33,6 +36,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         expenses = new ExpenseList();
         entries = new UniqueEntryList();
         incomes = new IncomeList();
+        wishes = new WishList();
     }
 
     public AddressBook() {}
@@ -51,8 +55,16 @@ public class AddressBook implements ReadOnlyAddressBook {
      * Replaces the contents of the person list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
      */
-    public void setEntries(List<Expense> expenses) {
+    public void setExpenseEntries(List<Expense> expenses) {
         this.expenses.setEntries(expenses);
+    }
+
+    public void setIncomeEntries(List<Income> incomes) {
+        this.incomes.setEntries(incomes);
+    }
+
+    public void setWishEntries(List<Wish> wishes) {
+        this.wishes.setEntries(wishes);
     }
 
     /**
@@ -60,7 +72,9 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
-        setEntries(newData.getExpenseList());
+        setExpenseEntries(newData.getExpenseList());
+        setIncomeEntries(newData.getIncomeList());
+        setWishEntries(newData.getWishList());
     }
 
     //// person-level operations
@@ -100,6 +114,15 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Adds a specified Wish to the finance app.
+     * @param wish the specified Wish to be added.
+     */
+    public void addWish(Wish wish) {
+        entries.add(wish);
+        wishes.add(wish);
+    }
+
+    /**
      * Replaces the given person {@code target} in the list with {@code editedPerson}.
      * {@code target} must exist in the address book.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
@@ -134,6 +157,16 @@ public class AddressBook implements ReadOnlyAddressBook {
     @Override
     public ObservableList<Expense> getExpenseList() {
         return expenses.asUnmodifiableObservableList();
+    }
+
+    @Override
+    public ObservableList<Income> getIncomeList() {
+        return incomes.asUnmodifiableObservableList();
+    }
+
+    @Override
+    public ObservableList<Wish> getWishList() {
+        return wishes.asUnmodifiableObservableList();
     }
 
     @Override

@@ -7,6 +7,8 @@ import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.Entry;
 import seedu.address.model.person.Expense;
+import seedu.address.model.person.Income;
+import seedu.address.model.person.Wish;
 
 /**
  * The API of the Model component.
@@ -75,6 +77,16 @@ public interface Model {
      * {@code person} must not already exist in the address book.
      */
     void addExpense(Expense entry);
+    /**
+     * Adds the given Income.
+     * {@code entry} must not already exist in the address book.
+     */
+    void addIncome(Income entry);
+    /**
+     * Adds the given Wish.
+     * {@code entry} must not already exist in the address book.
+     */
+    void addWish(Wish entry);
     /**
      * Replaces the given person {@code target} with {@code editedPerson}.
      * {@code target} must exist in the address book.

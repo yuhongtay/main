@@ -11,24 +11,24 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Expense;
+import seedu.address.model.person.Wish;
 
 /**
  * An Immutable AddressBook that is serializable to JSON format.
  */
 @JsonRootName(value = "addressbook")
-class JsonSerializableAddressBook {
+class JsonSerializableWishList {
 
     public static final String MESSAGE_DUPLICATE_PERSON = "Persons list contains duplicate person(s).";
 
-    private final List<JsonAdaptedExpense> expenses = new ArrayList<>();
+    private final List<JsonAdaptedWish> wishes = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonSerializableAddressBook} with the given persons.
      */
     @JsonCreator
-    public JsonSerializableAddressBook(@JsonProperty("expenses") List<JsonAdaptedExpense> expenses) {
-        this.expenses.addAll(expenses);
+    public JsonSerializableWishList(@JsonProperty("wishes") List<JsonAdaptedWish> wishes) {
+        this.wishes.addAll(wishes);
     }
 
     /**
@@ -36,8 +36,8 @@ class JsonSerializableAddressBook {
      *
      * @param source future changes to this will not affect the created {@code JsonSerializableAddressBook}.
      */
-    public JsonSerializableAddressBook(ReadOnlyAddressBook source) {
-        expenses.addAll(source.getExpenseList().stream().map(JsonAdaptedExpense::new).collect(Collectors.toList()));
+    public JsonSerializableWishList(ReadOnlyAddressBook source) {
+        wishes.addAll(source.getWishList().stream().map(JsonAdaptedWish::new).collect(Collectors.toList()));
     }
 
     /**
@@ -47,9 +47,9 @@ class JsonSerializableAddressBook {
      */
     public AddressBook toModelType() throws IllegalValueException {
         AddressBook addressBook = new AddressBook();
-        for (JsonAdaptedExpense jsonAdaptedExpense : expenses) {
-            Expense entry = jsonAdaptedExpense.toModelType();
-            addressBook.addExpense(entry);
+        for (JsonAdaptedWish jsonAdaptedWish : wishes) {
+            Wish entry = jsonAdaptedWish.toModelType();
+            addressBook.addWish(entry);
         }
         return addressBook;
     }
