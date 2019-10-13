@@ -14,7 +14,9 @@ import seedu.address.commons.core.GuiSettings;
 public class UserPrefs implements ReadOnlyUserPrefs {
 
     private GuiSettings guiSettings = new GuiSettings();
-    private Path addressBookFilePath = Paths.get("data" , "addressbook.json");
+    private Path expenseListFilePath = Paths.get("data" , "expenseList.json");
+    private Path wishListFilePath = Paths.get("data" , "wishList.json");
+
 
     /**
      * Creates a {@code UserPrefs} with default values.
@@ -35,7 +37,8 @@ public class UserPrefs implements ReadOnlyUserPrefs {
     public void resetData(ReadOnlyUserPrefs newUserPrefs) {
         requireNonNull(newUserPrefs);
         setGuiSettings(newUserPrefs.getGuiSettings());
-        setAddressBookFilePath(newUserPrefs.getAddressBookFilePath());
+        setExpenseListFilePath(newUserPrefs.getExpenseListFilePath());
+        setWishListFilePath(newUserPrefs.getWishListFilePath());
     }
 
     public GuiSettings getGuiSettings() {
@@ -47,13 +50,22 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         this.guiSettings = guiSettings;
     }
 
-    public Path getAddressBookFilePath() {
-        return addressBookFilePath;
+    public Path getExpenseListFilePath() {
+        return expenseListFilePath;
     }
 
-    public void setAddressBookFilePath(Path addressBookFilePath) {
-        requireNonNull(addressBookFilePath);
-        this.addressBookFilePath = addressBookFilePath;
+    public Path getWishListFilePath() {
+        return wishListFilePath;
+    }
+
+    public void setExpenseListFilePath(Path expenseListFilePath) {
+        requireNonNull(expenseListFilePath);
+        this.expenseListFilePath = expenseListFilePath;
+    }
+
+    public void setWishListFilePath(Path expensewishListFilePath) {
+        requireNonNull(wishListFilePath);
+        this.wishListFilePath = wishListFilePath;
     }
 
     @Override
@@ -68,19 +80,22 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         UserPrefs o = (UserPrefs) other;
 
         return guiSettings.equals(o.guiSettings)
-                && addressBookFilePath.equals(o.addressBookFilePath);
+                && expenseListFilePath.equals(o.expenseListFilePath)
+                && wishListFilePath.equals(o.wishListFilePath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(guiSettings, addressBookFilePath);
+        return Objects.hash(guiSettings, expenseListFilePath, wishListFilePath);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Gui Settings : " + guiSettings);
-        sb.append("\nLocal data file location : " + addressBookFilePath);
+        sb.append("\nLocal data file location : "
+                + "expenditure: " + expenseListFilePath
+                + "wish list: " + wishListFilePath);
         return sb.toString();
     }
 

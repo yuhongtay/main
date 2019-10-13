@@ -4,6 +4,8 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_AMOUNT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DESC;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TIME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TYPE;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -21,12 +23,15 @@ public class AddCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a entry to the finance tracker. "
             + "Parameters: "
+            + PREFIX_TYPE + "TYPE "
             + PREFIX_DESC + "NAME "
             + PREFIX_AMOUNT + "AMOUNT "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
+            + PREFIX_TYPE + "Expense"
             + PREFIX_DESC + "deck mala "
             + PREFIX_AMOUNT + "5.50 "
+            + PREFIX_TIME + "1300"
             + PREFIX_TAG + "food "
             + PREFIX_TAG + "mala";
 

@@ -22,7 +22,7 @@ public class JsonWishListStorage extends JsonAddressBookStorage {
         super(filePath);
     }
 
-
+    @Override
     /**
      * Similar to {@link #readAddressBook()}.
      *
@@ -51,6 +51,7 @@ public class JsonWishListStorage extends JsonAddressBookStorage {
         saveAddressBook(addressBook, filePath);
     }
 
+    @Override
     /**
      * Similar to {@link #saveAddressBook(ReadOnlyAddressBook)}.
      *
