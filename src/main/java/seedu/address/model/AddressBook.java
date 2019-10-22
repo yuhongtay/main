@@ -5,22 +5,23 @@ import static java.util.Objects.requireNonNull;
 import java.util.List;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import seedu.address.model.person.AutoExpense;
 import seedu.address.model.person.AutoExpenseList;
 import seedu.address.model.person.Entry;
 import seedu.address.model.person.Expense;
 import seedu.address.model.person.ExpenseList;
-import seedu.address.model.person.ExpenseReminder;
-import seedu.address.model.person.ExpenseReminderList;
-import seedu.address.model.person.ExpenseTracker;
-import seedu.address.model.person.ExpenseTrackerList;
 import seedu.address.model.person.Income;
 import seedu.address.model.person.IncomeList;
 import seedu.address.model.person.UniqueEntryList;
 import seedu.address.model.person.Wish;
 import seedu.address.model.person.WishList;
-import seedu.address.model.person.WishReminder;
-import seedu.address.model.person.WishReminderList;
+import seedu.address.model.reminder.ExpenseReminder;
+import seedu.address.model.reminder.ExpenseReminderList;
+import seedu.address.model.reminder.ExpenseTracker;
+import seedu.address.model.reminder.ExpenseTrackerList;
+import seedu.address.model.reminder.WishReminder;
+import seedu.address.model.reminder.WishReminderList;
 
 /**
  * Wraps all data at the address-book level Duplicates are not allowed (by
@@ -102,15 +103,10 @@ public class AddressBook implements ReadOnlyAddressBook {
      * As such editing a wish after loading a file may result in WishReminder not updating wish accordingly.
      * This attempts to address that.
      */
-    private void mapWishToReminders() {
-        for (WishReminder reminder : wishReminders) {
-            for (Wish wish : wishes) {
-                if ((reminder.getWish()).equals(wish)) {
-                    reminder.setWish(wish);
-                }
-            }
-        }
+    public void mapWishToReminders(WishList wishes) {
+        wishReminders.updateWishes(new FilteredList<Wish> (wishes.asUnmodifiableObservableList()));
     }
+
     /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
@@ -124,7 +120,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         setExpenseReminders(newData.getExpenseReminderList());
         setExpenseTrackers(newData.getExpenseTrackerList());
         setWishReminders(newData.getWishReminderList());
-        mapWishToReminders();
+        mapWishToReminders(wishes);
     }
     //// person-level operations
     /**
@@ -264,6 +260,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         requireNonNull(editedEntry);
         wishes.setWish(target, editedEntry);
         entries.setEntry(target, editedEntry);
+        mapWishToReminders(wishes);
     }
 
     private void setExpenseTracker(ExpenseTracker target, ExpenseTracker editedEntry) {
@@ -341,6 +338,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void removeWish(Wish key) {
         wishes.remove(key);
         entries.remove(key);
+        mapWishToReminders(wishes);
     }
     private void removeExpenseTracker(ExpenseTracker key) {
         expenseTrackers.remove(key);

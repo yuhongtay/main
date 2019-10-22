@@ -8,12 +8,12 @@ import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.AutoExpense;
 import seedu.address.model.person.Entry;
 import seedu.address.model.person.Expense;
-import seedu.address.model.person.ExpenseReminder;
+import seedu.address.model.reminder.ExpenseReminder;
 import seedu.address.model.person.Income;
 import seedu.address.model.person.SortSequence;
 import seedu.address.model.person.SortType;
 import seedu.address.model.person.Wish;
-import seedu.address.model.person.WishReminder;
+import seedu.address.model.reminder.WishReminder;
 
 /**
  * The API of the Model component.
@@ -26,6 +26,7 @@ public interface Model {
     Predicate<Wish> PREDICATE_SHOW_ALL_WISHES = unused -> true;
     Predicate<AutoExpense> PREDICATE_SHOW_ALL_AUTOEXPENSES = unused -> true;
     Predicate<ExpenseReminder> PREDICATE_SHOW_ALL_EXPENSE_REMINDERS = unused -> true;
+    Predicate<WishReminder> PREDICATE_SHOW_ALL_WISH_REMINDERS = unused -> true;
 
     /**
      * Replaces user prefs data with the data in {@code userPrefs}.
@@ -73,6 +74,8 @@ public interface Model {
 
     boolean hasExpenseReminder(ExpenseReminder reminder);
 
+    boolean hasWishReminder(WishReminder reminder);
+
     /**
      * Deletes the given entry. The entry must exist in the address book.
      */
@@ -95,6 +98,8 @@ public interface Model {
 
     void deleteExpenseReminder(ExpenseReminder target);
 
+    void deleteWishReminder(WishReminder target);
+
     /**
      * Deletes the given AutoExpense. The entry must exist in the address book.
      */
@@ -116,6 +121,8 @@ public interface Model {
 
     void addExpenseReminder(ExpenseReminder expenseReminder);
 
+    void addWishReminder(WishReminder wishReminder);
+
     /**
      * Replaces the given entry {@code target} with {@code editedEntry}.
      * {@code target} must exist in the address book. The entry identity of
@@ -125,6 +132,8 @@ public interface Model {
     void setEntry(Entry target, Entry editedEntry);
 
     void setExpenseReminder(ExpenseReminder target, ExpenseReminder editedEntry);
+
+    void setWishReminder(WishReminder target, WishReminder editedEntry);
 
     /** Returns an unmodifiable view of the filtered entry list */
     ObservableList<Entry> getFilteredEntryList();
@@ -143,7 +152,7 @@ public interface Model {
 
     ObservableList<ExpenseReminder> getFilteredExpenseReminders();
 
-    ObservableList<WishReminder> getFiltereWishReminders();
+    ObservableList<WishReminder> getFilteredWishReminders();
     /**
      * Updates the filter of the filtered entry list to filter by the given
      * {@code predicate}.

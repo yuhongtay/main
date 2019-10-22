@@ -1,26 +1,32 @@
-package seedu.address.model.person;
+package seedu.address.model.reminder;
+
+import java.util.function.Predicate;
+
+import seedu.address.model.person.Description;
 
 /**
  * Basic reminder class with minimal functionality.
  */
 public abstract class Reminder {
-    private String message;
+    //private int priority;
+    //private ReminderType type;
+    private Description message;
     private boolean isActivated;
-    private int priority;
+    private Predicate activationCondition;
 
 
-    public Reminder(String message) {
+    public Reminder(Description message) {
         this.message = message;
         isActivated = false;
     }
 
-    public String getMessage() {
+    public Description getMessage() {
         return message;
     }
 
-    public void setPriority(int priority) {
+    /*public void setPriority(int priority) {
         this.priority = priority;
-    }
+    }*/
 
     public boolean getStatus() {
         return isActivated;

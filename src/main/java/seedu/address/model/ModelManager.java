@@ -15,13 +15,13 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.person.AutoExpense;
 import seedu.address.model.person.Entry;
 import seedu.address.model.person.Expense;
-import seedu.address.model.person.ExpenseReminder;
-import seedu.address.model.person.ExpenseTrackerManager;
+import seedu.address.model.reminder.ExpenseReminder;
+import seedu.address.model.reminder.ExpenseTrackerManager;
 import seedu.address.model.person.Income;
 import seedu.address.model.person.SortSequence;
 import seedu.address.model.person.SortType;
 import seedu.address.model.person.Wish;
-import seedu.address.model.person.WishReminder;
+import seedu.address.model.reminder.WishReminder;
 import seedu.address.model.util.EntryComparator;
 
 /**
@@ -134,6 +134,12 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public boolean hasWishReminder(WishReminder reminder) {
+        requireNonNull(reminder);
+        return addressBook.hasWishReminder(reminder);
+    }
+
+    @Override
     public void deleteEntry(Entry target) {
         addressBook.removeEntry(target);
         if (target instanceof Expense) {
@@ -175,6 +181,10 @@ public class ModelManager implements Model {
 
     public void deleteExpenseReminder(ExpenseReminder target) {
         addressBook.removeExpenseReminder(target);
+    }
+
+    public void deleteWishReminder(WishReminder target) {
+        addressBook.removeWishReminder(target);
     }
 
     @Override
@@ -230,6 +240,13 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void addWishReminder(WishReminder wishReminder) {
+        addressBook.addWishReminder(wishReminder);
+        expenseTrackers.track(filteredExpenses);
+        addressBook.updateExpenseReminders();
+    }
+
+    @Override
     public void setEntry(Entry target, Entry editedEntry) {
         requireAllNonNull(target, editedEntry);
         addressBook.setEntry(target, editedEntry);
@@ -252,6 +269,11 @@ public class ModelManager implements Model {
         addressBook.updateExpenseReminders();
     }
 
+    @Override
+    public void setWishReminder(WishReminder target, WishReminder editedEntry) {
+        requireAllNonNull(target, editedEntry);
+        addressBook.setWishReminder(target, editedEntry);
+    }
 
     // =========== Filtered Person List Accessors
 
@@ -289,7 +311,7 @@ public class ModelManager implements Model {
     }
 
 
-    public ObservableList<WishReminder> getFiltereWishReminders() {
+    public ObservableList<WishReminder> getFilteredWishReminders() {
         return filteredWishReminders;
     }
 

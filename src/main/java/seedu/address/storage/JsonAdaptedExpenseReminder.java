@@ -12,9 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Entry;
-import seedu.address.model.person.ExpenseContainsTagPredicate;
-import seedu.address.model.person.ExpenseReminder;
-import seedu.address.model.person.ExpenseTracker;
+import seedu.address.model.reminder.ExpenseContainsTagPredicate;
+import seedu.address.model.reminder.ExpenseReminder;
+import seedu.address.model.reminder.ExpenseTracker;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -47,7 +47,7 @@ class JsonAdaptedExpenseReminder {
      * Converts a given {@code Person} into this class for Jackson use.
      */
     public JsonAdaptedExpenseReminder(ExpenseReminder source) {
-        message = source.getMessage();
+        message = source.getMessage().toString();
         quota = source.getQuota();
         tagged.addAll(source.getTracker().getPredicate().getTags().stream()
                 .map(JsonAdaptedTag::new)
@@ -73,7 +73,7 @@ class JsonAdaptedExpenseReminder {
         final Set<Tag> modelTags = new HashSet<>(entryTags);
         final ExpenseContainsTagPredicate predicate = new ExpenseContainsTagPredicate(modelTags);
         final ExpenseTracker tracker = new ExpenseTracker(predicate);
-        return new ExpenseReminder(modelMessage, modelQuota, tracker);
+        return new ExpenseReminder(new Description(modelMessage), modelQuota, tracker);
     }
 
 }

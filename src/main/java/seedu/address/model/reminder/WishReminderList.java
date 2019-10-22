@@ -1,4 +1,4 @@
-package seedu.address.model.person;
+package seedu.address.model.reminder;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
@@ -10,6 +10,8 @@ import java.util.function.Predicate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import seedu.address.commons.core.index.Index;
+import seedu.address.model.person.Wish;
 import seedu.address.model.person.exceptions.DuplicateEntryException;
 import seedu.address.model.person.exceptions.EntryNotFoundException;
 
@@ -23,16 +25,16 @@ import seedu.address.model.person.exceptions.EntryNotFoundException;
  * Supports a minimal set of list operations.
  *
  */
-public class ExpenseReminderList implements Iterable<ExpenseReminder> {
+public class WishReminderList implements Iterable<WishReminder> {
 
-    private final ObservableList<ExpenseReminder> internalList = FXCollections.observableArrayList();
-    private final ObservableList<ExpenseReminder> internalUnmodifiableList =
+    private final ObservableList<WishReminder> internalList = FXCollections.observableArrayList();
+    private final ObservableList<WishReminder> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
 
     /**
      * Returns true if the list contains an equivalent person as the given argument.
      */
-    public boolean contains(ExpenseReminder toCheck) {
+    public boolean contains(WishReminder toCheck) {
         requireNonNull(toCheck);
         return internalList.stream().anyMatch(toCheck::isSameReminder);
     }
@@ -41,9 +43,8 @@ public class ExpenseReminderList implements Iterable<ExpenseReminder> {
      * Adds a person to the list.
      * The person must not already exist in the list.
      */
-    public void add(ExpenseReminder toAdd) {
+    public void add(WishReminder toAdd) {
         requireNonNull(toAdd);
-
         internalList.add(toAdd);
     }
 
@@ -52,33 +53,33 @@ public class ExpenseReminderList implements Iterable<ExpenseReminder> {
      * {@code target} must exist in the list.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
      */
-    public void setExpenseReminder(ExpenseReminder target, ExpenseReminder editedExpenseReminder) {
-        requireAllNonNull(target, editedExpenseReminder);
+    public void setWishReminder(WishReminder target, WishReminder editedWishReminder) {
+        requireAllNonNull(target, editedWishReminder);
 
         int index = internalList.indexOf(target);
         if (index == -1) {
             throw new EntryNotFoundException();
         }
 
-        if (!target.equals(editedExpenseReminder) && contains(editedExpenseReminder)) {
+        if (!target.equals(editedWishReminder) && contains(editedWishReminder)) {
             throw new DuplicateEntryException();
         }
 
-        internalList.set(index, editedExpenseReminder);
+        internalList.set(index, editedWishReminder);
     }
 
     /**
      * Removes the equivalent person from the list.
      * The person must exist in the list.
      */
-    public void remove(ExpenseReminder toRemove) {
+    public void remove(WishReminder toRemove) {
         requireNonNull(toRemove);
         if (!internalList.remove(toRemove)) {
             throw new EntryNotFoundException();
         }
     }
 
-    public void setEntries(ExpenseReminderList replacement) {
+    public void setEntries(WishReminderList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);
     }
@@ -87,7 +88,7 @@ public class ExpenseReminderList implements Iterable<ExpenseReminder> {
      * Replaces the contents of this list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
      */
-    public void setEntries(List<ExpenseReminder> entries) {
+    public void setEntries(List<WishReminder> entries) {
         requireAllNonNull(entries);
 
         internalList.setAll(entries);
@@ -97,37 +98,50 @@ public class ExpenseReminderList implements Iterable<ExpenseReminder> {
      * updates the status of all reminders in ExpenseReminderList
      */
     public void updateList() {
-        for (ExpenseReminder reminder : internalList) {
+        for (WishReminder reminder : internalList) {
             reminder.updateStatus();
         }
     }
 
     /**
+     * Should be called at the beginning of the program. This will reassign wishes to their respective reminders.
+     * using the wishIndex.
+     * @param filteredWishes
+     */
+    public void updateWishes(FilteredList<Wish> filteredWishes) {
+        for (WishReminder reminder : internalList) {
+            Index wishIndex = reminder.getWishIndex();
+            reminder.setWish(filteredWishes.get(wishIndex.getZeroBased()));
+        }
+    }
+
+
+    /**
      * Get list of reminders to be displayed on main page.
      */
-    public ObservableList<ExpenseReminder> getDisplay() {
-        FilteredList<ExpenseReminder> displayList = new FilteredList<>(this.asUnmodifiableObservableList());
-        displayList.setPredicate(new ExpenseReminderIsActive());
+    public ObservableList<WishReminder> getDisplay() {
+        FilteredList<WishReminder> displayList = new FilteredList<>(this.asUnmodifiableObservableList());
+        displayList.setPredicate(new WishReminderIsActive());
         return displayList;
     }
 
     /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
-    public ObservableList<ExpenseReminder> asUnmodifiableObservableList() {
+    public ObservableList<WishReminder> asUnmodifiableObservableList() {
         return internalUnmodifiableList;
     }
 
     @Override
-    public Iterator<ExpenseReminder> iterator() {
+    public Iterator<WishReminder> iterator() {
         return internalList.iterator();
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof ExpenseReminderList // instanceof handles nulls
-                && internalList.equals(((ExpenseReminderList) other).internalList));
+                || (other instanceof WishReminderList // instanceof handles nulls
+                && internalList.equals(((WishReminderList) other).internalList));
     }
 
     @Override
@@ -139,9 +153,9 @@ public class ExpenseReminderList implements Iterable<ExpenseReminder> {
 /**
  * Predicate to filter reminders to be displayed.
  */
-class ExpenseReminderIsActive implements Predicate<ExpenseReminder> {
+class WishReminderIsActive implements Predicate<WishReminder> {
     @Override
-    public boolean test(ExpenseReminder entry) {
+    public boolean test(WishReminder entry) {
         return entry.getStatus();
     }
 }

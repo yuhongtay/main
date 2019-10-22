@@ -1,4 +1,4 @@
-package seedu.address.logic.parser;
+package seedu.address.logic.parser.remindercommandparser;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_AMOUNT;
@@ -8,13 +8,18 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import seedu.address.logic.commands.AddExpenseReminderCommand;
+import seedu.address.logic.commands.remindercommands.AddExpenseReminderCommand;
+import seedu.address.logic.parser.ArgumentMultimap;
+import seedu.address.logic.parser.ArgumentTokenizer;
+import seedu.address.logic.parser.Parser;
+import seedu.address.logic.parser.ParserUtil;
+import seedu.address.logic.parser.Prefix;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Amount;
 import seedu.address.model.person.Description;
-import seedu.address.model.person.ExpenseContainsTagPredicate;
-import seedu.address.model.person.ExpenseReminder;
-import seedu.address.model.person.ExpenseTracker;
+import seedu.address.model.reminder.ExpenseContainsTagPredicate;
+import seedu.address.model.reminder.ExpenseReminder;
+import seedu.address.model.reminder.ExpenseTracker;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -42,7 +47,7 @@ public class AddExpenseReminderCommandParser implements Parser<AddExpenseReminde
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
         ExpenseContainsTagPredicate predicate = new ExpenseContainsTagPredicate(tagList);
         ExpenseTracker tracker = new ExpenseTracker(predicate);
-        ExpenseReminder newreminder = new ExpenseReminder(desc.toString(), (long) amt.value, tracker);
+        ExpenseReminder newreminder = new ExpenseReminder(desc, (long) amt.value, tracker);
 
         return new AddExpenseReminderCommand(newreminder);
     }

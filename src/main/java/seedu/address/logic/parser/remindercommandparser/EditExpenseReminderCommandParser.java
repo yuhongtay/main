@@ -1,4 +1,4 @@
-package seedu.address.logic.parser;
+package seedu.address.logic.parser.remindercommandparser;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
@@ -12,7 +12,11 @@ import java.util.Optional;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.EditExpenseReminderCommand;
+import seedu.address.logic.commands.remindercommands.EditExpenseReminderCommand;
+import seedu.address.logic.parser.ArgumentMultimap;
+import seedu.address.logic.parser.ArgumentTokenizer;
+import seedu.address.logic.parser.Parser;
+import seedu.address.logic.parser.ParserUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.tag.Tag;
 
@@ -44,7 +48,7 @@ public class EditExpenseReminderCommandParser implements Parser<EditExpenseRemin
                 new EditExpenseReminderCommand.EditReminderDescriptor();
         if (argMultimap.getValue(PREFIX_DESC).isPresent()) {
             editReminderDescriptor.setDesc(
-                    ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESC).get()).toString());
+                    ParserUtil.parseDescription(argMultimap.getValue(PREFIX_DESC).get()));
         }
 
         if (argMultimap.getValue(PREFIX_AMOUNT).isPresent()) {

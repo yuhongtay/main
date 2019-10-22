@@ -3,11 +3,12 @@ package seedu.address.storage;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Entry;
 import seedu.address.model.person.Wish;
-import seedu.address.model.person.WishReminder;
+import seedu.address.model.reminder.WishReminder;
 
 /**
  * Jackson-friendly version of {@link Entry}.
@@ -17,7 +18,7 @@ class JsonAdaptedWishReminder {
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Expense's %s field is missing!";
 
     private String message;
-    private Wish wish;
+    private Index wishIndex;
 
 
     /**
@@ -25,17 +26,17 @@ class JsonAdaptedWishReminder {
      */
     @JsonCreator
     public JsonAdaptedWishReminder(@JsonProperty("desc") String desc,
-                                      @JsonProperty("wish") Wish wish) {
+                                      @JsonProperty("wishIndex") Index wishIndex) {
         this.message = desc;
-        this.wish = wish;
+        this.wishIndex = wishIndex;
     }
 
     /**
      * Converts a given {@code Person} into this class for Jackson use.
      */
     public JsonAdaptedWishReminder(WishReminder source) {
-        message = source.getMessage();
-        wish = source.getWish();
+        message = source.getMessage().toString();
+        wishIndex = source.getWishIndex();
     }
 
     /**
@@ -49,8 +50,8 @@ class JsonAdaptedWishReminder {
                     Description.class.getSimpleName()));
         }
         final String modelMessage = message;
-        final Wish modelWish = wish;
-        return new WishReminder(modelMessage, modelWish);
+        final Index modelWishIndex = wishIndex;
+        return new WishReminder(new Description(modelMessage), modelWishIndex);
     }
 
 }

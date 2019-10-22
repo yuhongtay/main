@@ -1,4 +1,4 @@
-package seedu.address.logic.commands;
+package seedu.address.logic.commands.remindercommands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_AMOUNT;
@@ -15,21 +15,24 @@ import java.util.Set;
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
+import seedu.address.logic.commands.Command;
+import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.person.ExpenseContainsTagPredicate;
-import seedu.address.model.person.ExpenseReminder;
-import seedu.address.model.person.ExpenseTracker;
+import seedu.address.model.person.Description;
+import seedu.address.model.reminder.ExpenseContainsTagPredicate;
+import seedu.address.model.reminder.ExpenseReminder;
+import seedu.address.model.reminder.ExpenseTracker;
 import seedu.address.model.tag.Tag;
 
 /**
- * Edits the details of an existing person in the address book.
+ * Edits the details of an existing Expense Reminder in the address book.
  */
 public class EditExpenseReminderCommand extends Command {
 
     public static final String COMMAND_WORD = "editExpenseReminder";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the Expense identified "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the Expense Reminder identified "
             + "by the index number used in the displayed Expenses list. "
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX (must be a positive integer) "
@@ -83,13 +86,13 @@ public class EditExpenseReminderCommand extends Command {
      * Creates and returns a {@code Person} with the details of {@code personToEdit}
      * edited with {@code editPersonDescriptor}.
      */
-    private static ExpenseReminder createEditedExpenseReminder(ExpenseReminder expenseToEdit,
+    private static ExpenseReminder createEditedExpenseReminder(ExpenseReminder reminderToEdit,
                                                                EditReminderDescriptor editEntryDescriptor) {
-        assert expenseToEdit != null;
-        String updatedMessage = editEntryDescriptor.getDesc().orElse(expenseToEdit.getMessage());
-        Long updatedAmount = editEntryDescriptor.getAmount().orElse(expenseToEdit.getQuota());
+        assert reminderToEdit != null;
+        Description updatedMessage = editEntryDescriptor.getDesc().orElse(reminderToEdit.getMessage());
+        Long updatedAmount = editEntryDescriptor.getAmount().orElse(reminderToEdit.getQuota());
         Set<Tag> updatedTags = editEntryDescriptor.getTags()
-                .orElse(expenseToEdit.getTracker().getPredicate().getTags());
+                .orElse(reminderToEdit.getTracker().getPredicate().getTags());
         ExpenseTracker tracker = new ExpenseTracker(new ExpenseContainsTagPredicate(updatedTags));
         return new ExpenseReminder(updatedMessage, updatedAmount, tracker);
     }
@@ -117,7 +120,7 @@ public class EditExpenseReminderCommand extends Command {
      * corresponding field value of the person.
      */
     public static class EditReminderDescriptor {
-        private String desc;
+        private Description desc;
         private Long amt;
         private Set<Tag> tags;
 
@@ -140,11 +143,11 @@ public class EditExpenseReminderCommand extends Command {
             return CollectionUtil.isAnyNonNull(desc, amt, tags);
         }
 
-        public void setDesc(String desc) {
+        public void setDesc(Description desc) {
             this.desc = desc;
         }
 
-        public Optional<String> getDesc() {
+        public Optional<Description> getDesc() {
             return Optional.ofNullable(desc);
         }
 

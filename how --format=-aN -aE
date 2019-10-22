@@ -1,0 +1,252 @@
+[33mcommit c97a158a87cd85be42f2e71bdc616e3300c3c163[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Mon Oct 21 17:45:03 2019 +0800
+
+    Change class used by EntryBuilder tests from Time to Date
+
+[33mcommit a9567ba2289ef7f25bcd7a1a82a59a16f0a40651[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Mon Oct 21 17:40:30 2019 +0800
+
+    fix checkstyle
+
+[33mcommit 1c9342ef405c616405abca86632914a82e201ae1[m
+Merge: d1ab8dad 56a8396b
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Mon Oct 21 17:21:25 2019 +0800
+
+    Merge branch 'Reminders'
+    replace Time class with Date class
+    
+    # Conflicts:
+    #       src/main/java/seedu/address/logic/parser/ParserUtil.java
+    #       src/main/java/seedu/address/model/AddressBook.java
+    #       src/main/java/seedu/address/model/Model.java
+    #       src/main/java/seedu/address/model/ModelManager.java
+    #       src/main/java/seedu/address/model/ReadOnlyAddressBook.java
+    #       src/main/java/seedu/address/model/person/ExpenseReminder.java
+    #       src/main/java/seedu/address/model/person/Wish.java
+    #       src/main/java/seedu/address/storage/JsonSerializableAddressBook.java
+
+[33mcommit 56a8396b21984d5a48de9cceffe7578372665613[m[33m ([m[1;31morigin/Reminders[m[33m, [m[1;32mReminders[m[33m)[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Sat Oct 19 12:06:39 2019 +0800
+
+    Change Time class to wrap LocalDate
+
+[33mcommit d1ab8dad5f0b13e4c75cef6cfe41875c4129a171[m
+Merge: 4461e62a 1e891b8b
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Sat Oct 19 11:49:07 2019 +0800
+
+    Merge pull request #8 from AY1920S1-CS2103-T16-4/master
+    
+    fork update
+
+[33mcommit 1e891b8b825832b39b02146cbc5e4a9b3254f30b[m
+Author: Tan Yee Jian <tanyeejian@gmail.com>
+Date:   Thu Oct 17 19:13:10 2019 +0800
+
+    WIP: Add AutoExpense (#72)
+    
+    * Succumb to adoc
+    
+    * Edit image file names in AboutUs.adoc
+    
+    * Add Hooks
+    
+    * WIP: Add AutoExpense
+    
+    * Fix checkstyle errors
+
+[33mcommit 562756827077429c51f561aecbd870bb62cc23f7[m
+Merge: f0bf8457 40f166fd
+Author: MC <dandford@gmail.com>
+Date:   Thu Oct 17 16:57:53 2019 +0800
+
+    Merge branch 'master' of github.com:AY1920S1-CS2103-T16-4/main into Demo
+
+[33mcommit 3f060630750c4278a7d2d31c7ea121e0244f00de[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 23:58:57 2019 +0800
+
+    implement WishReminder
+
+[33mcommit 089e745eb8d33cf5072f9e4b00911226f256482c[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 23:58:43 2019 +0800
+
+    implment WishReminder
+
+[33mcommit 40f166fdfc3c0927ffcbb1c9c5d71cc00b407e68[m
+Author: Jessica Phua Shu Xin <42565209+jessicax941@users.noreply.github.com>
+Date:   Wed Oct 16 23:32:10 2019 +0800
+
+    Changes to UI (#74)
+    
+    * Change look of EntryCard
+    
+    Also changed title and icon of application and moved commandBox to the bottom of the app.
+    
+    * Add WishListPanel and BudgetListPanel classes
+    
+    * Fix checkstyle issues
+    
+    * Change local variable name
+    
+    * Add newline at the end of ExtensionsLight.css
+
+[33mcommit fd1f8e98f05b458e82c645558b2e276e2d614886[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 23:27:23 2019 +0800
+
+    add ExpenseReminders WIP (#73)
+    
+    * add ExpenseReminders
+    
+    * fix checkstyle errors
+    
+    * Fix Checkstyle Error
+    
+    * add edit ExpenseReminderCommand
+    
+    * add delete Command
+    
+    * fix checkstyle error
+
+[33mcommit 4af083e120954f3e3294079262abcacfe0ed58da[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 21:03:01 2019 +0800
+
+    fix checkstyle error
+
+[33mcommit 771e6da9dba7eff40ed818093fe928f876022771[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 20:56:20 2019 +0800
+
+    add delete Command
+
+[33mcommit b9b0399c022e521820a478019479a7559f87b755[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 20:34:41 2019 +0800
+
+    add edit ExpenseReminderCommand
+
+[33mcommit 1c47bd31041dfb294ced6a1ad31799ebd43f9ad7[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 17:37:17 2019 +0800
+
+    Fix Checkstyle Error
+
+[33mcommit baeb21b0632e11e36d8a070f8fc62a104188ab65[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 17:34:47 2019 +0800
+
+    fix checkstyle errors
+
+[33mcommit f6210124a2fb124f67f850eaede96a68dba19297[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Wed Oct 16 17:23:08 2019 +0800
+
+    add ExpenseReminders
+
+[33mcommit f0bf8457d6ea7ee23a5f999d793af98b0bfbd586[m
+Author: MC <dandford@gmail.com>
+Date:   Wed Oct 16 13:26:47 2019 +0800
+
+    Checkstyle fix
+
+[33mcommit 716b0f7471e513cb8cdb5a5afc9bbafad1f3262a[m
+Author: MC <dandford@gmail.com>
+Date:   Wed Oct 16 12:44:31 2019 +0800
+
+    Checkstyle fix again
+
+[33mcommit 0d800ecdb1f9c715aa6554cb0a643181b2fc0112[m
+Author: MC <dandford@gmail.com>
+Date:   Wed Oct 16 12:40:34 2019 +0800
+
+    Checkstyle fix
+
+[33mcommit dd616ad6828f0508fd8f24be32a9c7450f0c200f[m
+Author: MC <dandford@gmail.com>
+Date:   Wed Oct 16 12:25:14 2019 +0800
+
+    Checkstyle fix
+
+[33mcommit 58f2d7f536c5a3f68865cfe8b431cf1ac5cf586c[m
+Author: MC <dandford@gmail.com>
+Date:   Wed Oct 16 12:11:37 2019 +0800
+
+    Checkstyle fix
+
+[33mcommit 079380a4e039808a02764598f25147592cee1d30[m
+Merge: ff254a16 2ebe04c6
+Author: MC <dandford@gmail.com>
+Date:   Wed Oct 16 10:03:54 2019 +0800
+
+    Settling merge conflicts and implementing basic Sorting
+
+[33mcommit 2ebe04c6c80c60cf6d666497864a646a2f399cf6[m
+Author: MC <dandford@gmail.com>
+Date:   Tue Oct 15 21:36:16 2019 +0800
+
+    Basic implementation of Sort
+
+[33mcommit ff254a160843807009aecec2829eae785b9e71a5[m
+Merge: 3e3a7f8e 81a8e4f7
+Author: Ong Ming Chung <43778895+Dandford@users.noreply.github.com>
+Date:   Tue Oct 15 21:35:02 2019 +0800
+
+    Merge pull request #69 from yuhongtay/WishListv1.2
+    
+    Wish listv1.2
+
+[33mcommit 81a8e4f7dd50d309aa28fd2b00658f07f14fcab1[m[33m ([m[1;31morigin/WishListv1.2[m[33m, [m[1;32mWishListv1.2[m[33m)[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Tue Oct 15 20:49:52 2019 +0800
+
+    Fix CheckStyle Error
+
+[33mcommit fc3c7bf22a33454c607897b0cc375b39654b4783[m
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Tue Oct 15 20:47:28 2019 +0800
+
+    Fix Checkstyle Errors
+
+[33mcommit 8beabce4db003c51686b43951b2fe2c909d5ff93[m
+Merge: 5efd6d21 4461e62a
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Tue Oct 15 20:42:26 2019 +0800
+
+    Merge branch 'master' of https://github.com/yuhongtay/main into WishListv1.2
+    
+    # Conflicts:
+    #       src/main/java/seedu/address/logic/Logic.java
+    #       src/main/java/seedu/address/logic/LogicManager.java
+    #       src/main/java/seedu/address/logic/commands/AddCommand.java
+    #       src/main/java/seedu/address/logic/commands/DeleteCommand.java
+    #       src/main/java/seedu/address/logic/commands/EditCommand.java
+    #       src/main/java/seedu/address/model/AddressBook.java
+    #       src/main/java/seedu/address/model/Model.java
+    #       src/main/java/seedu/address/model/ModelManager.java
+    #       src/main/java/seedu/address/model/ReadOnlyAddressBook.java
+    #       src/main/java/seedu/address/ui/EntryListPanel.java
+
+[33mcommit 4461e62ad697938e862e76d7fa4b6f7edaf4764f[m
+Merge: 9d5c5b67 3e3a7f8e
+Author: yuhongtay <43899014+yuhongtay@users.noreply.github.com>
+Date:   Tue Oct 15 11:38:47 2019 +0800
+
+    Merge pull request #7 from AY1920S1-CS2103-T16-4/master
+    
+    update fork
+
+[33mcommit 3e3a7f8e632554681d5aa0fc0240e341c02cbbd7[m
+Merge: 170e03b1 d3efd5d5
+Author: Ong Ming Chung <43778895+Dandford@users.noreply.github.com>
+Date:   Tue Oct 15 11:36:33 2019 +0800
+
+    Merge pull request #70 from jessicax941/Dandford-Morphing-Skeleton
+    
+    Implem

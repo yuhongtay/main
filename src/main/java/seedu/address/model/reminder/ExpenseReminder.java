@@ -1,4 +1,6 @@
-package seedu.address.model.person;
+package seedu.address.model.reminder;
+
+import seedu.address.model.person.Description;
 
 /**
  * Implement expense reminder
@@ -8,7 +10,7 @@ public class ExpenseReminder extends Reminder {
     private long quota;
     private ExpenseTracker tracker;
 
-    public ExpenseReminder(String message, long quota, ExpenseTracker tracker) {
+    public ExpenseReminder(Description message, long quota, ExpenseTracker tracker) {
         super(message);
         this.tracker = tracker;
         this.quota = quota;

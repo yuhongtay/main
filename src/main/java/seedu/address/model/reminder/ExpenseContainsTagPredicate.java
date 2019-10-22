@@ -1,8 +1,9 @@
-package seedu.address.model.person;
+package seedu.address.model.reminder;
 
 import java.util.Set;
 import java.util.function.Predicate;
 
+import seedu.address.model.person.Expense;
 import seedu.address.model.tag.Tag;
 
 /**
