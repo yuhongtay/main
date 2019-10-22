@@ -103,7 +103,7 @@ public class ExpenseReminderList implements Iterable<ExpenseReminder> {
     }
 
     /**
-     * Get list of reminders to be displayed on main page.
+     * Get list of expense reminders to be displayed on main page.
      */
     public ObservableList<ExpenseReminder> getDisplay() {
         FilteredList<ExpenseReminder> displayList = new FilteredList<>(this.asUnmodifiableObservableList());
