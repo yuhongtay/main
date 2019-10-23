@@ -139,10 +139,12 @@ image::StorageClassDiagram.png[]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]
 
-The `Storage` component,
+The `Storage`,
 
 * can save `UserPref` objects in json format and read it back.
 * can save the Address Book data in json format and read it back.
+* This includes Expense, Income, Wish, AutoExpenditure, Budget and TrackerReminder
+* DateReminder data stored in Entry subclass storage data.
 
 [[Design-Commons]]
 === Common classes
