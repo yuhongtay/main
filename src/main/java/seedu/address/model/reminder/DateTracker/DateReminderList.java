@@ -25,16 +25,16 @@ import seedu.address.model.person.exceptions.EntryNotFoundException;
  * Supports a minimal set of list operations.
  *
  */
-public class WishReminderList implements Iterable<WishReminder> {
+public class DateReminderList implements Iterable<DateReminder> {
 
-    private final ObservableList<WishReminder> internalList = FXCollections.observableArrayList();
-    private final ObservableList<WishReminder> internalUnmodifiableList =
+    private final ObservableList<DateReminder> internalList = FXCollections.observableArrayList();
+    private final ObservableList<DateReminder> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
 
     /**
      * Returns true if the list contains an equivalent person as the given argument.
      */
-    public boolean contains(WishReminder toCheck) {
+    public boolean contains(DateReminder toCheck) {
         requireNonNull(toCheck);
         return internalList.stream().anyMatch(toCheck::isSameReminder);
     }
@@ -43,7 +43,7 @@ public class WishReminderList implements Iterable<WishReminder> {
      * Adds a person to the list.
      * The person must not already exist in the list.
      */
-    public void add(WishReminder toAdd) {
+    public void add(DateReminder toAdd) {
         requireNonNull(toAdd);
         internalList.add(toAdd);
     }
@@ -53,33 +53,33 @@ public class WishReminderList implements Iterable<WishReminder> {
      * {@code target} must exist in the list.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
      */
-    public void setWishReminder(WishReminder target, WishReminder editedWishReminder) {
-        requireAllNonNull(target, editedWishReminder);
+    public void setDateReminder(DateReminder target, DateReminder editedDateReminder) {
+        requireAllNonNull(target, editedDateReminder);
 
         int index = internalList.indexOf(target);
         if (index == -1) {
             throw new EntryNotFoundException();
         }
 
-        if (!target.equals(editedWishReminder) && contains(editedWishReminder)) {
+        if (!target.equals(editedDateReminder) && contains(editedDateReminder)) {
             throw new DuplicateEntryException();
         }
 
-        internalList.set(index, editedWishReminder);
+        internalList.set(index, editedDateReminder);
     }
 
     /**
      * Removes the equivalent person from the list.
      * The person must exist in the list.
      */
-    public void remove(WishReminder toRemove) {
+    public void remove(DateReminder toRemove) {
         requireNonNull(toRemove);
         if (!internalList.remove(toRemove)) {
             throw new EntryNotFoundException();
         }
     }
 
-    public void setEntries(WishReminderList replacement) {
+    public void setEntries(DateReminderList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);
     }
@@ -88,7 +88,7 @@ public class WishReminderList implements Iterable<WishReminder> {
      * Replaces the contents of this list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
      */
-    public void setEntries(List<WishReminder> entries) {
+    public void setEntries(List<DateReminder> entries) {
         requireAllNonNull(entries);
 
         internalList.setAll(entries);
@@ -98,7 +98,7 @@ public class WishReminderList implements Iterable<WishReminder> {
      * updates the status of all reminders in ExpenseReminderList
      */
     public void updateList() {
-        for (WishReminder reminder : internalList) {
+        for (DateReminder reminder : internalList) {
             reminder.updateStatus();
         }
     }
@@ -109,7 +109,7 @@ public class WishReminderList implements Iterable<WishReminder> {
      * @param filteredWishes
      */
     public void updateWishes(FilteredList<Wish> filteredWishes) {
-        for (WishReminder reminder : internalList) {
+        for (DateReminder reminder : internalList) {
             Index wishIndex = reminder.getWishIndex();
             reminder.setWish(filteredWishes.get(wishIndex.getZeroBased()));
         }
@@ -119,8 +119,8 @@ public class WishReminderList implements Iterable<WishReminder> {
     /**
      * Get list of reminders to be displayed on main page.
      */
-    public ObservableList<WishReminder> getDisplay() {
-        FilteredList<WishReminder> displayList = new FilteredList<>(this.asUnmodifiableObservableList());
+    public ObservableList<DateReminder> getDisplay() {
+        FilteredList<DateReminder> displayList = new FilteredList<>(this.asUnmodifiableObservableList());
         displayList.setPredicate(new WishReminderIsActive());
         return displayList;
     }
@@ -128,20 +128,20 @@ public class WishReminderList implements Iterable<WishReminder> {
     /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
-    public ObservableList<WishReminder> asUnmodifiableObservableList() {
+    public ObservableList<DateReminder> asUnmodifiableObservableList() {
         return internalUnmodifiableList;
     }
 
     @Override
-    public Iterator<WishReminder> iterator() {
+    public Iterator<DateReminder> iterator() {
         return internalList.iterator();
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof WishReminderList // instanceof handles nulls
-                && internalList.equals(((WishReminderList) other).internalList));
+                || (other instanceof DateReminderList // instanceof handles nulls
+                && internalList.equals(((DateReminderList) other).internalList));
     }
 
     @Override
@@ -153,9 +153,9 @@ public class WishReminderList implements Iterable<WishReminder> {
 /**
  * Predicate to filter reminders to be displayed.
  */
-class WishReminderIsActive implements Predicate<WishReminder> {
+class WishReminderIsActive implements Predicate<DateReminder> {
     @Override
-    public boolean test(WishReminder entry) {
+    public boolean test(DateReminder entry) {
         return entry.getStatus();
     }
 }

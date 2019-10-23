@@ -1,14 +1,13 @@
-package seedu.address.model.reminder;
-
+package seedu.address.model.reminder.trackerreminder;
 
 /**
  * Expense Tracker used by expense reminder to trigger reminder.
  */
 public class ExpenseTracker {
     private long currAmount;
-    private ExpenseContainsTagPredicate predicate;
+    private TrackerPredicate predicate;
 
-    public ExpenseTracker(ExpenseContainsTagPredicate predicate) {
+    public ExpenseTracker(TrackerPredicate predicate) {
         this.predicate = predicate;
         currAmount = 0;
     }
@@ -21,7 +20,7 @@ public class ExpenseTracker {
         currAmount = newAmt;
     }
 
-    public ExpenseContainsTagPredicate getPredicate() {
+    public TrackerPredicate getPredicate() {
         return predicate;
     }
 

@@ -1,23 +1,23 @@
-package seedu.address.model.reminder;
+package seedu.address.model.reminder.trackerreminder;
 
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.model.person.Expense;
 
 /**
- * Manages ExpenseTrackerList. Will be instantiated inside Object Manager and Address Book.
+ * Manages TrackerList. Will be instantiated inside Object Manager and Address Book.
  */
 public class ExpenseTrackerManager {
-    private FilteredList<ExpenseTracker> trackerList;
+    private FilteredList<Tracker> trackerList;
 
 
 
-    public ExpenseTrackerManager(ObservableList<ExpenseTracker> trackerList) {
+    public ExpenseTrackerManager(ObservableList<Tracker> trackerList) {
         this.trackerList = new FilteredList<>(trackerList);
     }
 
 
-    public ObservableList<ExpenseTracker> getList() {
+    public ObservableList<Tracker> getList() {
         return trackerList;
     }
 
@@ -26,7 +26,7 @@ public class ExpenseTrackerManager {
      * @param filteredExpenses
      */
     public void track(FilteredList<Expense> filteredExpenses) {
-        for (ExpenseTracker tracker : trackerList) {
+        for (Tracker tracker : trackerList) {
             long newAmt = 0;
             filteredExpenses.setPredicate(tracker.getPredicate());
             for (Expense expense : filteredExpenses) {

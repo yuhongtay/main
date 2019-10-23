@@ -5,12 +5,12 @@ import seedu.address.model.person.Description;
 /**
  * Implement expense reminder
  */
-public class ExpenseReminder extends Reminder {
+public class TrackerReminder extends Reminder {
     private long currSum;
     private long quota;
     private ExpenseTracker tracker;
 
-    public ExpenseReminder(Description message, long quota, ExpenseTracker tracker) {
+    public TrackerReminder(Description message, long quota, ExpenseTracker tracker) {
         super(message);
         this.tracker = tracker;
         this.quota = quota;
@@ -41,20 +41,20 @@ public class ExpenseReminder extends Reminder {
     @Override
     /**
      * Returns true if both ExpenseReminders have all identity fields that are the same.
-     * @param otherExpenseReminder ExpenseReminder to compare to
+     * @param otherExpenseReminder TrackerReminder to compare to
      * @return boolean
      */
     public boolean isSameReminder(Reminder otherReminder) {
         if (otherReminder == this) {
             return true;
         }
-        if (!(otherReminder instanceof ExpenseReminder)) {
+        if (!(otherReminder instanceof TrackerReminder)) {
             return false;
         }
-        ExpenseReminder otherExpenseReminder = (ExpenseReminder) otherReminder;
-        return otherExpenseReminder != null
-                && otherExpenseReminder.getMessage().equals(getMessage())
-                && otherExpenseReminder.getTracker().equals(getTracker())
-                && otherExpenseReminder.getQuota() == (getQuota());
+        TrackerReminder otherTrackerReminder = (TrackerReminder) otherReminder;
+        return otherTrackerReminder != null
+                && otherTrackerReminder.getMessage().equals(getMessage())
+                && otherTrackerReminder.getTracker().equals(getTracker())
+                && otherTrackerReminder.getQuota() == (getQuota());
     }
 }

@@ -10,11 +10,11 @@ import seedu.address.model.person.Wish;
 /**
  * Implements wish reminder
  */
-public class WishReminder extends Reminder {
+public class DateReminder extends Reminder {
     private Wish wish;
     private Index wishIndex;
 
-    public WishReminder(Description desc, Wish wish, Index wishIndex) {
+    public DateReminder(Description desc, Wish wish, Index wishIndex) {
         super(desc);
         this.wish = wish;
         this.wishIndex = wishIndex;
@@ -24,7 +24,7 @@ public class WishReminder extends Reminder {
      * USed when loading wish reminder from storage. As such, reminder has yet to be mapped to wishes.
      * @return
      */
-    public WishReminder(Description desc, Index wishIndex) {
+    public DateReminder(Description desc, Index wishIndex) {
         super(desc);
         this.wishIndex = wishIndex;
     }
@@ -54,19 +54,19 @@ public class WishReminder extends Reminder {
     @Override
     /**
      * Returns true if both WishReminders have all identity fields that are the same.
-     * @param otherReminder WishReminder to compare to
+     * @param otherReminder DateReminder to compare to
      * @return boolean
      */
     public boolean isSameReminder(Reminder otherReminder) {
         if (otherReminder == this) {
             return true;
         }
-        if (!(otherReminder instanceof WishReminder)) {
+        if (!(otherReminder instanceof DateReminder)) {
             return false;
         }
-        WishReminder otherWishReminder = (WishReminder) otherReminder;
-        return otherWishReminder != null
-                && otherWishReminder.getMessage().equals(getMessage())
-                && otherWishReminder.getWish().equals(getWish());
+        DateReminder otherDateReminder = (DateReminder) otherReminder;
+        return otherDateReminder != null
+                && otherDateReminder.getMessage().equals(getMessage())
+                && otherDateReminder.getWish().equals(getWish());
     }
 }

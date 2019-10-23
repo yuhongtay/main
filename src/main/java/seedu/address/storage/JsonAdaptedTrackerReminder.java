@@ -12,9 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Description;
 import seedu.address.model.person.Entry;
-import seedu.address.model.reminder.ExpenseContainsTagPredicate;
-import seedu.address.model.reminder.ExpenseReminder;
-import seedu.address.model.reminder.ExpenseTracker;
+import seedu.address.model.reminder.trackerreminder.Tracker;
+import seedu.address.model.reminder.trackerreminder.TrackerPredicate;
+import seedu.address.model.reminder.trackerreminder.TrackerReminder;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -46,7 +46,7 @@ class JsonAdaptedExpenseReminder {
     /**
      * Converts a given {@code Person} into this class for Jackson use.
      */
-    public JsonAdaptedExpenseReminder(ExpenseReminder source) {
+    public JsonAdaptedExpenseReminder(TrackerReminder source) {
         message = source.getMessage().toString();
         quota = source.getQuota();
         tagged.addAll(source.getTracker().getPredicate().getTags().stream()
@@ -59,7 +59,7 @@ class JsonAdaptedExpenseReminder {
      *
      * @throws IllegalValueException if there were any data constraints violated in the adapted person.
      */
-    public ExpenseReminder toModelType() throws IllegalValueException {
+    public TrackerReminder toModelType() throws IllegalValueException {
         final List<Tag> entryTags = new ArrayList<>();
         for (JsonAdaptedTag tag : tagged) {
             entryTags.add(tag.toModelType());
@@ -71,9 +71,9 @@ class JsonAdaptedExpenseReminder {
         final String modelMessage = message;
         final long modelQuota = quota;
         final Set<Tag> modelTags = new HashSet<>(entryTags);
-        final ExpenseContainsTagPredicate predicate = new ExpenseContainsTagPredicate(modelTags);
-        final ExpenseTracker tracker = new ExpenseTracker(predicate);
-        return new ExpenseReminder(new Description(modelMessage), modelQuota, tracker);
+        final TrackerPredicate predicate = new TrackerPredicate(modelTags);
+        final Tracker tracker = new Tracker(predicate);
+        return new TrackerReminder(new Description(modelMessage), modelQuota, tracker);
     }
 
 }
