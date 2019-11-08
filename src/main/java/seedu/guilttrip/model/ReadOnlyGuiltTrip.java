@@ -1,5 +1,7 @@
 package seedu.guilttrip.model;
 
+import java.util.List;
+
 import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import seedu.guilttrip.model.entry.AutoExpense;
@@ -11,7 +13,6 @@ import seedu.guilttrip.model.entry.Income;
 import seedu.guilttrip.model.entry.Wish;
 import seedu.guilttrip.model.reminders.Reminder;
 import seedu.guilttrip.model.reminders.conditions.Condition;
-import seedu.guilttrip.model.reminders.messages.Notification;
 
 /**
  * Unmodifiable view of an guilttrip book
@@ -38,10 +39,9 @@ public interface ReadOnlyGuiltTrip extends Observable {
 
     ObservableList<AutoExpense> getAutoExpenseList();
 
-    ObservableList<Reminder> getReminderList();
+    List<Reminder> getReminderList();
 
-    ObservableList<Condition> getConditionList();
+    List<Condition> getConditionList();
 
-    ObservableList<Notification> getNotificationList();
 
 }

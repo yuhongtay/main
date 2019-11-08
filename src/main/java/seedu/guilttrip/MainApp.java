@@ -64,7 +64,7 @@ public class MainApp extends Application {
         model = initModelManager(storage, userPrefs);
         logic = new LogicManager(model, storage);
         ui = new UiManager(logic);
-        ((GuiltTrip) model.getAddressBook()).linkReminderListToUi((UiManager) ui);
+        model.linkReminderListToUi((UiManager) ui);
     }
 
     /**
@@ -186,4 +186,5 @@ public class MainApp extends Application {
             logger.severe("Failed to save preferences " + StringUtil.getDetails(e));
         }
     }
+
 }

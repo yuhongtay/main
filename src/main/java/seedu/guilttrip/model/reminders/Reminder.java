@@ -7,7 +7,7 @@ import seedu.guilttrip.model.reminders.messages.Notification;
 
 public interface Reminder {
     /**
-     * Used by ReminderList to know when to update displayed reminder messages.
+     * Used by ReminderManager to know when to update displayed reminder messages.
      * @return
      */
     abstract Status getStatus();

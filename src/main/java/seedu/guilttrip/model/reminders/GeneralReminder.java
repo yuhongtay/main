@@ -114,10 +114,10 @@ public class GeneralReminder implements ListenerSupport, Reminder{
                     if (message != null) {
                         message.update(entryExamined);
                     }
-                    logger.info("Notifying ReminderList: " + support.getPropertyChangeListeners().size());
-                    support.firePropertyChange("statusChange", null, this);
+                    logger.info("Notifying ReminderManager: " + support.getPropertyChangeListeners().size());
                     status = Status.met;
                     logger.info("All Reminder condition met. Setting GeneralReminder status to " + status.toString());
+                    support.firePropertyChange("statusChange", null, this);
                 }
                 logger.info("IMPT:" + numberOfConditionsMet + " / " + numberOfConditions);
             }

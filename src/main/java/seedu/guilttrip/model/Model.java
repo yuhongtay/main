@@ -26,6 +26,7 @@ import seedu.guilttrip.model.reminders.conditions.Condition;
 import seedu.guilttrip.model.reminders.messages.Notification;
 import seedu.guilttrip.model.statistics.CategoryStatistics;
 import seedu.guilttrip.model.statistics.DailyStatistics;
+import seedu.guilttrip.ui.UiManager;
 
 /**
  * The API of the Model component.
@@ -179,7 +180,7 @@ public interface Model {
 
     void addAutoExpense(AutoExpense autoExpense);
 
-    void addReminder(GeneralReminder generalReminder);
+    void addReminder(Reminder reminder);
 
     void addCondition(Condition condition);
 
@@ -273,6 +274,8 @@ public interface Model {
     void sortFilteredAutoExpense(SortType comparator, SortSequence sequence);
 
     void sortFilteredWishes(SortType comparator, SortSequence sequence);
+
+    void linkReminderListToUi(UiManager uiManager);
 
     /**
      * Returns true if the model has previous finance tracker states to restore.

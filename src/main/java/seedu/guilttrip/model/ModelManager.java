@@ -35,12 +35,15 @@ import seedu.guilttrip.model.entry.SortType;
 import seedu.guilttrip.model.entry.Wish;
 import seedu.guilttrip.model.reminders.GeneralReminder;
 import seedu.guilttrip.model.reminders.Reminder;
+import seedu.guilttrip.model.reminders.ReminderManager;
 import seedu.guilttrip.model.reminders.conditions.Condition;
+import seedu.guilttrip.model.reminders.conditions.ConditionsManager;
 import seedu.guilttrip.model.reminders.messages.Notification;
 import seedu.guilttrip.model.statistics.CategoryStatistics;
 import seedu.guilttrip.model.statistics.DailyStatistics;
 import seedu.guilttrip.model.statistics.StatisticsManager;
 import seedu.guilttrip.model.util.EntryComparator;
+import seedu.guilttrip.ui.UiManager;
 
 /**
  * Represents the in-memory model of the guilttrip book data.
@@ -64,8 +67,12 @@ public class ModelManager implements Model, PropertyChangeListener {
     private final SortedList<AutoExpense> sortedAutoExpenseList;
     private final SortedList<Wish> sortedWishList;
     private final FilteredList<Reminder> filteredReminders;
+    //Reminders
+    private final ReminderManager reminders = new ReminderManager();
     private final FilteredList<Condition> filteredConditions;
+    private final ConditionsManager conditions = new ConditionsManager();
     private final FilteredList<Notification> filteredNotifications;
+    //
     private final VersionedGuiltTrip versionedAddressBook;
     private LocalDate currDate;
 
@@ -76,7 +83,7 @@ public class ModelManager implements Model, PropertyChangeListener {
         super();
         requireAllNonNull(addressBook, userPrefs);
 
-        logger.fine("Initializing with guilttrip book: " + addressBook + " and user prefs " + userPrefs);
+        logger.fine("Initializing with GuiltTrip book: " + addressBook + " and user prefs " + userPrefs);
 
         versionedAddressBook = new VersionedGuiltTrip(addressBook);
         this.userPrefs = new UserPrefs(userPrefs);
@@ -104,9 +111,11 @@ public class ModelManager implements Model, PropertyChangeListener {
         sortedAutoExpenseList.setComparator(new EntryComparator(sortByTime, sortByAsc));
         filteredAutoExpenses = new FilteredList<>(sortedAutoExpenseList);
         //Reminders
-        filteredReminders = new FilteredList<>(versionedAddressBook.getReminderList());
-        filteredConditions = new FilteredList<>(versionedAddressBook.getConditionList());
-        filteredNotifications = new FilteredList<>(versionedAddressBook.getNotificationList());
+        //reminders.setEntries(versionedAddressBook.getReminderList());
+        filteredReminders = new FilteredList<>(reminders.asUnmodifiableObservableList());
+        //conditions.setEntries(versionedAddressBook.getConditionList());
+        filteredConditions = new FilteredList<>(conditions.asUnmodifiableObservableList());
+        filteredNotifications = new FilteredList<>(reminders.asUnmodifiableNotificationList());
         createExpensesfromAutoExpenses();
         this.stats = new StatisticsManager(this.filteredExpenses, this.filteredIncomes,
                 versionedAddressBook.getCategoryList());
@@ -204,7 +213,7 @@ public class ModelManager implements Model, PropertyChangeListener {
     @Override
     public boolean hasReminder(Reminder Reminder) {
         requireNonNull(Reminder);
-        return versionedAddressBook.hasReminder(Reminder);
+        return reminders.contains(Reminder);
     }
 
     @Override
@@ -259,12 +268,14 @@ public class ModelManager implements Model, PropertyChangeListener {
 
     @Override
     public void deleteReminder(Reminder target) {
-        versionedAddressBook.removeReminder(target);
+        reminders.remove(target);
+        //versionedAddressBook.removeReminder(target);
     }
 
     @Override
     public void deleteCondition(Condition target) {
-        versionedAddressBook.removeCondition(target);
+        conditions.remove(target);
+        //versionedAddressBook.removeCondition(target);
     }
 
     @Override
@@ -276,6 +287,7 @@ public class ModelManager implements Model, PropertyChangeListener {
     public void addExpense(Expense expense) {
         versionedAddressBook.addExpense(expense);
         versionedAddressBook.updateBudgets(filteredExpenses);
+        conditions.addEntryUpdate(expense);
         sortFilteredExpense(sortByTime, sortByAsc);
         updateFilteredExpenses(PREDICATE_SHOW_ALL_ENTRIES);
     }
@@ -283,6 +295,7 @@ public class ModelManager implements Model, PropertyChangeListener {
     @Override
     public void addIncome(Income income) {
         versionedAddressBook.addIncome(income);
+        conditions.addEntryUpdate(income);
         updateFilteredIncomes(PREDICATE_SHOW_ALL_ENTRIES);
         sortFilteredIncome(sortByTime, sortByAsc);
     }
@@ -311,13 +324,15 @@ public class ModelManager implements Model, PropertyChangeListener {
     }
 
     @Override
-    public void addReminder(GeneralReminder generalReminder) {
-        versionedAddressBook.addReminder(generalReminder);
+    public void addReminder(Reminder reminder) {
+        reminders.add(reminder);
+        //versionedAddressBook.addReminder(reminder);
     }
 
     @Override
     public void addCondition(Condition condition) {
-        versionedAddressBook.addCondition(condition);
+        conditions.add(condition);
+        //versionedAddressBook.addCondition(condition);
     }
 
     @Override
@@ -327,15 +342,17 @@ public class ModelManager implements Model, PropertyChangeListener {
     }
 
     @Override
-    public void setReminder(Reminder target, Reminder editedGeneralReminder) {
-        requireAllNonNull(target, editedGeneralReminder);
-        versionedAddressBook.setReminder(target, editedGeneralReminder);
+    public void setReminder(Reminder target, Reminder editedReminder) {
+        requireAllNonNull(target, editedReminder);
+        reminders.setReminder(target, editedReminder);
+        //versionedAddressBook.setReminder(target, editedReminder);
     }
 
     @Override
     public void setCondition(Condition target, Condition editedCondition) {
         requireAllNonNull(target, editedCondition);
-        versionedAddressBook.setCondition(target, editedCondition);
+        conditions.setCondition(target, editedCondition);
+        //versionedAddressBook.setCondition(target, editedCondition);
     }
 
     @Override
@@ -343,6 +360,7 @@ public class ModelManager implements Model, PropertyChangeListener {
         requireAllNonNull(target, editedEntry);
         versionedAddressBook.setExpense(target, editedEntry);
         versionedAddressBook.updateBudgets(filteredExpenses);
+        conditions.setEntryUpdate(target, editedEntry);
         updateFilteredExpenses(PREDICATE_SHOW_ALL_ENTRIES);
         sortFilteredExpense(sortByTime, sortByAsc);
     }
@@ -359,6 +377,7 @@ public class ModelManager implements Model, PropertyChangeListener {
     public void setIncome(Income target, Income editedEntry) {
         requireAllNonNull(target, editedEntry);
         versionedAddressBook.setIncome(target, editedEntry);
+        conditions.setEntryUpdate(target, editedEntry);
         updateFilteredIncomes(PREDICATE_SHOW_ALL_ENTRIES);
         sortFilteredIncome(sortByTime, sortByAsc);
     }
@@ -496,14 +515,18 @@ public class ModelManager implements Model, PropertyChangeListener {
     }
 
     //===== GeneralReminder Handler =====//
-    @Override
-    public Reminder getReminderSelected() {
-        return versionedAddressBook.getReminderSelected();
+    public void linkReminderListToUi(UiManager uiManager) {
+        this.reminders.linkToUi(uiManager);
     }
 
     @Override
     public void selectReminder(Reminder reminder) {
-        versionedAddressBook.selectReminder(reminder);
+        reminders.setReminderSelected(reminder);
+    }
+
+    @Override
+    public Reminder getReminderSelected() {
+        return reminders.getReminderSelected();
     }
     // =================== Sorting =============================================================
 
@@ -652,4 +675,6 @@ public class ModelManager implements Model, PropertyChangeListener {
         return versionedAddressBook.equals(other.versionedAddressBook) && userPrefs.equals(other.userPrefs)
                 && filteredExpenses.equals(other.filteredExpenses) && filteredIncomes.equals(other.filteredIncomes);
     }
+
+
 }
