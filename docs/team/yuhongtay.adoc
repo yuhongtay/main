@@ -30,9 +30,6 @@ AddressBook - Level 3 is a desktop address book application used for teaching So
 **Documentation:
 ***Updated AboutUs Documentation.  (Pull requests https://github.com/AY1920S1-CS2103-T16-4/main/pull/37[#37])
 
-== Contributions to the User Guide
-
-
 
 == Contributions to the User Guide
 
