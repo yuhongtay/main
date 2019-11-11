@@ -19,7 +19,7 @@ Craving for a nice bowl of Mala but can’t seem to save up enough for it? guilt
 ** Highlights: This enhancement was highly extensive to implement. Due to their stateful nature, reminders have to appropriately and efficiently respond to the wide variety of changes made to the guilTrip() databank while minimising coupling as much as possible. A efficient and more or less self contained system was required.
 
 * *Minor enhancement*:
-** TimeUtil which periodically updates the app with the currebt local date.
+** TimeUtil which periodically updates the app with the current local date.
 ** Implemented Add, Edit, Delete and Search functions for Wish entry class.
 
 * *Code contributed*: [https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=yuhongtay&sort=groupTitle&sortWithin=title&since=2019-09-06&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[Response code]]
