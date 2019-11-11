@@ -713,66 +713,12 @@ Other Examples:
 * `findIncome cat/business d/2019-09-09`: lists each entry in expenditure and income with date of "2019-09-09" and category of business.
 * `findWish d/2019-09-09 tg/a tg/b`: lists each entry in expenditure and income with date of "2019-09-09" and tags of a and b.
 
-=== Organization
 
-==== Creating Tags : 'createTag'
-Creates a Tag.
-
-Format: `createTag <category name>`
-
-Example:
-
-* `createTag income salary`
-* `createTag expense food`
-* `createTag wishList Nov`
-
-==== Listing Tags : 'listTags'
-List the list of Tags.
-
-Format: `listTags <keywords> --regex <regex>`
-
-Example:
-
-* `listTags important`
-* `listTags --regex .*important`
-
-==== Renaming Tags : 'renameTag'
-Rename the description of one tag.
-
-Format: `renameTag <oldname> <newname>`
-
-Example:
-
-* `renameTag food moreFood`
-
-==== Deleting Tags : 'deleteTag'
-Deletes the tag from the pool of tag. Tagged objects can be removed with -h flag.
-
-Format: `deleteTag <name> <-h || --hard>`
-
-Example:
-
-* `deleteTag food`
-* `deleteTag food -h`
-////
-
-////
-==== Resetting Record : `reset` [coming in v2.0]
-Resets records of expenditure/budget/income/loan.
-
-Format: `reset before/<DD-MM-YYYY> after/<DD-MM-YYYY>`
-
-Example:
-
-* `reset after/27/1/1000 before/28-1-1000` :nothing deleted
-* `reset before/2/1/2019 # 1/1/2019 and earlier`
-////
-// tag::reminders[]
 === Reminders
 ==== Add Reminder: `addReminder`
 
 Adds new GeneralReminder.
-Format: `addReminder n/<Message> [typ/<EntryType>] [l.b/<LowerBound>] [u.b/<UpperBound>] [start/<Start Date>] [end/<End Date]`
+Format: `addReminder n/<Message> [typ/<EntryType>] [l.b/<LowerBound>] [u.b/<UpperBound>] [start/<Start Date>] [end/<End Date>] [tg/<tags>]`
 
 Examples:
 
@@ -835,40 +781,6 @@ Example:
 Deletes the selected Reminder.
 
 Format: `deleteReminder`
-
-// end::reminders[]
-// tag::wishlist[]
-=== WishList
-
-==== Add WishList : `addWishlist`
-Adds a new item to your current wishlist
-
-Format: `addWish n/<Description> c/<Category> a/<Price> d/<Date>`
-
-Examples:
-
-* `add typ/Wish n/deck mala c/food a/5.60 d/2019 10 28`
-* `add typ/Wish n/deck mala c/food a/5.60 d/01/01/2020`
-
-==== Delete WishList : `deleteWish`
-Deletes the item at the stated index from your current wishlist
-
-Format: `deleteWish <index>`
-
-Examples:
-
-* `deleteWishlist 3`
-
-==== Edit Wish in WishList : `editWish`
-edit the description, date, or tags of your wishes.
-
-Format: `editWishlist <index> [n/<Description>] [cat/<Category>] [amt/<Price>] [d/<Date>] [tag/<Tag>]`
-
-Examples:
-
-* `editWishlist 1 n/1 try the chinatown ri ri hong mala!`
-* `editWishlist 1 a/20 tag/mala tag/expensive`
-// end::wishlist[]
 
 === Undo/Redo
 ==== Undo previous command : `undo`
