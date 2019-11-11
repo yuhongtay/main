@@ -41,9 +41,9 @@ AddressBook - Level 3 is a desktop address book application used for teaching So
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=Reminders]
+include::../UserGuide.adoc[tag=reminders]
 
-include::../DeveloperGuide.adoc[tag=WishList]
+include::../DeveloperGuide.adoc[tag=wishlist]
 
 == Contributions to the Developer Guide
 
