@@ -652,7 +652,7 @@ Example:
 * `reset after/27/1/1000 before/28-1-1000` :nothing deleted
 * `reset before/2/1/2019 # 1/1/2019 and earlier`
 ////
-
+// tag::reminders[]
 === Reminders
 ==== Add Reminder: `addReminder`
 
@@ -721,7 +721,8 @@ Example:
 Deletes the selected Reminder.
 
 Format: `deleteReminder`
-
+// end::reminders[]
+// tag::wishlist[]
 === WishList
 
 ==== Add WishList : `addWishlist`
@@ -752,13 +753,7 @@ Examples:
 
 * `editWishlist 1 n/1 try the chinatown ri ri hong mala!`
 * `editWishlist 1 a/20 tag/mala tag/expensive`
-
-==== Purchase WishList : `purchase` [coming in v2.0]
-Purchases the item at the stated index from your current wishlist
-
-Format: `purchase <index>`
-
-Example: `purchase 1`
+// end::wishlist[]
 
 === Undo/Redo
 ==== Undo previous command : `undo`
