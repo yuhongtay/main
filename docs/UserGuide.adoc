@@ -803,11 +803,18 @@ Examples:
 
 
 ==== List all active Reminders (reminders currently set to display) : `listReminders`
+
+image::listReminderspage.png[]
+
 Shows reminder panel.
 
 Format: `listReminders`
 
+
 ==== Select Reminders : `selectReminder`
+
+image::selectReminder.png[]
+
 select reminder to edit.
 
 Format: `selectReminder <Reminder Index>`
@@ -815,6 +822,7 @@ Format: `selectReminder <Reminder Index>`
 Example:
 
 * `selectReminder 1`
+
 
 ==== Edit Reminder : `editReminder`
 Edits conditions of a GeneralReminder or period/ frequency of an EntryReminder selected.
