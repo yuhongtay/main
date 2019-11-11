@@ -484,9 +484,6 @@ It may also be redundant or excessive as implementing the `changeFont` command i
 
 // end::uifeature[]
 
-<<<<<<< HEAD
-// tag::reminders[]
-=======
 // tag::qol[]
 
 === Quality of Life features
@@ -598,7 +595,7 @@ image::AutoExpenseActivityDiagram.png[]
 
 // end::qol[]
 
->>>>>>> 966feef2a6d572f9f9402dfe2b38c10bf1ae2417
+// tag::reminders[]
 === Reminders
 
 ==== Implementation
