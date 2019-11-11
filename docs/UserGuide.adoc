@@ -713,9 +713,6 @@ Other Examples:
 * `findIncome cat/business d/2019-09-09`: lists each entry in expenditure and income with date of "2019-09-09" and category of business.
 * `findWish d/2019-09-09 tg/a tg/b`: lists each entry in expenditure and income with date of "2019-09-09" and tags of a and b.
 
-<<<<<<< HEAD
-// commenting out for mock PE.
-////
 === Organization
 
 ==== Creating Tags : 'createTag'
@@ -771,8 +768,6 @@ Example:
 * `reset before/2/1/2019 # 1/1/2019 and earlier`
 ////
 // tag::reminders[]
-=======
->>>>>>> 534ce0ed2ecee2cd5ca228f399ba4fc8ed6c7d32
 === Reminders
 ==== Add Reminder: `addReminder`
 
@@ -840,7 +835,7 @@ Example:
 Deletes the selected Reminder.
 
 Format: `deleteReminder`
-<<<<<<< HEAD
+
 // end::reminders[]
 // tag::wishlist[]
 === WishList
@@ -874,8 +869,6 @@ Examples:
 * `editWishlist 1 n/1 try the chinatown ri ri hong mala!`
 * `editWishlist 1 a/20 tag/mala tag/expensive`
 // end::wishlist[]
-=======
->>>>>>> 534ce0ed2ecee2cd5ca228f399ba4fc8ed6c7d32
 
 === Undo/Redo
 ==== Undo previous command : `undo`
