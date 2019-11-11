@@ -575,7 +575,7 @@ Format: `deleteWish <index>`
 Examples:
 
 * `deleteWishlist 3`
-// end::Sort[]
+// end::wishlist[]
 
 === Loan [coming in v2.0]
 ==== Adding a Loan : `addLoan` [coming in v2.0]
