@@ -539,6 +539,7 @@ Other Examples:
 * `deleteBudget 2`
 * `deleteBudget 4`
 
+// tag::wishlist[]
 === WishList
 
 ==== Add Wish : `addWishlist`
@@ -574,13 +575,7 @@ Format: `deleteWish <index>`
 Examples:
 
 * `deleteWishlist 3`
-
-==== Purchase WishList : `purchase` [coming in v2.0]
-Purchases the item at the stated index from your current wishlist
-
-Format: `purchase <index>`
-
-Example: `purchase 1`
+// end::Sort[]
 
 === Loan [coming in v2.0]
 ==== Adding a Loan : `addLoan` [coming in v2.0]
@@ -786,7 +781,7 @@ Other Examples:
 * `findIncome cat/business d/2019-09-09`: lists each entry in expenditure and income with date of "2019-09-09" and category of business.
 * `findWish d/2019-09-09 tg/a tg/b`: lists each entry in expenditure and income with date of "2019-09-09" and tags of a and b.
 
-
+// tag::reminders[]
 === Reminders
 ==== Add Reminder: `addReminder`
 
@@ -854,7 +849,7 @@ Example:
 Deletes the selected Reminder.
 
 Format: `deleteReminder`
-
+// end::reminders[]
 === Undo/Redo
 ==== Undo previous command : `undo`
 Restores the finance tracker to the state before the previous undoable command was executed or
