@@ -67,9 +67,9 @@ public class ConditionCard extends UiPart<Region> {
             TagsCondition tagsCondition = (TagsCondition) condition;
             String tags = "";
             for (Tag tag: tagsCondition.getTagList()) {
-                tags += tag.tagName + ",";
+                tags += tag.tagName + ", ";
             }
-            params.getChildren().add(new Label(tags.substring(0, tags.length() - 1)));
+            params.getChildren().add(new Label(tags.substring(0, tags.length() - 2)));
             break;
         case "quota condition":
             QuotaCondition quotaCondition = (QuotaCondition) condition;
