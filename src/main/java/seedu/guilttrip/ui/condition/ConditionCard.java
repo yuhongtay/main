@@ -8,7 +8,6 @@ import javafx.scene.layout.Region;
 
 import seedu.guilttrip.model.reminders.conditions.Condition;
 import seedu.guilttrip.model.reminders.conditions.DateCondition;
-import seedu.guilttrip.model.reminders.conditions.KeyWordsCondition;
 import seedu.guilttrip.model.reminders.conditions.QuotaCondition;
 import seedu.guilttrip.model.reminders.conditions.TagsCondition;
 import seedu.guilttrip.model.reminders.conditions.TypeCondition;
